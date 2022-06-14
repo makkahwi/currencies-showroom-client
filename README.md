@@ -1,24 +1,11 @@
 # vue
 
-## Project setup
-```
-yarn install
-```
+Welcome to my second trial on Vue.Js
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## How to start
 
-### Compiles and minifies for production
-```
-yarn build
-```
+- Clone repo to local machine
 
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Run CLI commands of...
+  - yarn install
+  - yarn serve
