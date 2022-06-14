@@ -1,6 +1,6 @@
 <template>
   <img src="./assets/developer.png" class="img">
-  <WelcomingComp msg="Welcome To My Second Trial On Vue.Js" />
+  <Header msg="Welcome To My Second Trial On Vue.Js" />
   <ExplanationComp :condition="true" />
   <Calculator :multiply="multiply" />
   <Result :result="result" />
@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import WelcomingComp from './components/WelcomingComp.vue'
+import Header from './components/Header.vue'
 import ExplanationComp from './components/Explanation.vue'
 import Calculator from './components/Calculator.vue'
 import Result from './components/Result.vue'
@@ -17,7 +17,7 @@ import FooterComp from './components/Footer.vue'
 export default {
   name: 'App',
   components: {
-    WelcomingComp,
+    Header,
     ExplanationComp,
     Calculator,
     Result,
