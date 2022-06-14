@@ -35,7 +35,7 @@ const User = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/UserPro
 const Pricing = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Pricing.vue');
 const TimeLine = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/TimeLinePage.vue');
 const Login = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Login.vue');
-const Home = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Home');
+const Home = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Landing');
 const Register = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Register.vue');
 const Lock = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Lock.vue');
 
