@@ -35,7 +35,7 @@ const User = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/UserPro
 const Pricing = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Pricing.vue');
 const TimeLine = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/TimeLinePage.vue');
 const Login = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Login.vue');
-const Home = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Home.vue');
+const Home = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Home');
 const Register = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Register.vue');
 const Lock = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Lock.vue');
 
@@ -90,17 +90,17 @@ let formsMenu = {
     {
       path: 'elements',
       name: 'Form elements',
-      component:  FormElements
+      component: FormElements
     },
     {
       path: 'components',
       name: 'Form components',
-      component:  FormComponents
+      component: FormComponents
     },
     {
       path: 'validation',
       name: 'Form validation',
-      component:  FormValidation
+      component: FormValidation
     }
   ]
 };
