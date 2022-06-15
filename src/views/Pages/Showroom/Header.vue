@@ -14,17 +14,15 @@
 
                 <b-row class="justify-content-center text-white">
                   <b-col md="4" class="p-1">
-                    <input type="checkbox" />
-                    <span class="px-1">
+                    <b-form-checkbox color="default">
                       Banknotes
-                    </span>
+                    </b-form-checkbox>
                   </b-col>
 
                   <b-col md="4" class="p-1">
-                    <input type="checkbox" />
-                    <span class="px-1">
+                    <b-form-checkbox color="default">
                       Coins
-                    </span>
+                    </b-form-checkbox>
                   </b-col>
                 </b-row>
               </b-col>
@@ -34,17 +32,15 @@
 
                 <b-row class="justify-content-center text-white">
                   <b-col md="4" class="p-1">
-                    <input type="checkbox" />
-                    <span class="px-1">
+                    <b-form-checkbox color="default">
                       Circuable
-                    </span>
+                    </b-form-checkbox>
                   </b-col>
 
                   <b-col md="4" class="p-1">
-                    <input type="checkbox" />
-                    <span class="px-1">
+                    <b-form-checkbox color="default">
                       Outdated
-                    </span>
+                    </b-form-checkbox>
                   </b-col>
                 </b-row>
               </b-col>
@@ -54,17 +50,15 @@
 
                 <b-row class="justify-content-center text-white">
                   <b-col md="4" class="p-1">
-                    <input type="checkbox" />
-                    <span class="px-1">
+                    <b-form-checkbox color="default">
                       Exist
-                    </span>
+                    </b-form-checkbox>
                   </b-col>
 
                   <b-col md="4" class="p-1">
-                    <input type="checkbox" />
-                    <span class="px-1">
+                    <b-form-checkbox color="default">
                       Dissolved
-                    </span>
+                    </b-form-checkbox>
                   </b-col>
                 </b-row>
               </b-col>
@@ -74,38 +68,33 @@
 
                 <b-row class="justify-content-center text-white">
                   <b-col md="4" class="p-1">
-                    <input type="checkbox" />
-                    <span class="px-1">
+                    <b-form-checkbox color="default">
                       Asia
-                    </span>
+                    </b-form-checkbox>
                   </b-col>
 
                   <b-col md="4" class="p-1">
-                    <input type="checkbox" />
-                    <span class="px-1">
+                    <b-form-checkbox color="default">
                       Europe
-                    </span>
+                    </b-form-checkbox>
                   </b-col>
 
                   <b-col md="4" class="p-1">
-                    <input type="checkbox" />
-                    <span class="px-1">
+                    <b-form-checkbox color="default">
                       Americas
-                    </span>
+                    </b-form-checkbox>
                   </b-col>
 
                   <b-col md="4" class="p-1">
-                    <input type="checkbox" />
-                    <span class="px-1">
+                    <b-form-checkbox color="default">
                       Africa
-                    </span>
+                    </b-form-checkbox>
                   </b-col>
 
                   <b-col md="4" class="p-1">
-                    <input type="checkbox" />
-                    <span class="px-1">
+                    <b-form-checkbox color="default">
                       Oceania
-                    </span>
+                    </b-form-checkbox>
                   </b-col>
                 </b-row>
               </b-col>
@@ -115,24 +104,21 @@
 
                 <b-row class="justify-content-center text-white">
                   <b-col md="4" class="p-1">
-                    <input type="checkbox" />
-                    <span class="px-1">
+                    <b-form-checkbox color="default">
                       Malaysia
-                    </span>
+                    </b-form-checkbox>
                   </b-col>
 
                   <b-col md="4" class="p-1">
-                    <input type="checkbox" />
-                    <span class="px-1">
+                    <b-form-checkbox color="default">
                       Jordan
-                    </span>
+                    </b-form-checkbox>
                   </b-col>
 
                   <b-col md="4" class="p-1">
-                    <input type="checkbox" />
-                    <span class="px-1">
+                    <b-form-checkbox color="default">
                       Germany
-                    </span>
+                    </b-form-checkbox>
                   </b-col>
                 </b-row>
               </b-col>
@@ -140,19 +126,15 @@
               <b-col md="6" class="p-3">
                 <h6 class="text-light">Per Issue Date</h6>
 
-                <b-row class="justify-content-center text-white">
-                  <b-col md="4" class="p-1">
-                    <input type="checkbox" />
-                    <span class="px-1">
-                      Asia
-                    </span>
+                <BaseSlider :value="[150, 450]" :range="{ min: 100, max: 500 }" :options="{ color: 'default' }" />
+
+                <b-row class="mt-3">
+                  <b-col cols="6" class="text-left">
+                    <span class="range-slider-value">100</span>
                   </b-col>
 
-                  <b-col md="4" class="p-1">
-                    <input type="checkbox" />
-                    <span class="px-1">
-                      Oceania
-                    </span>
+                  <b-col cols="6" class="text-right">
+                    <span class="range-slider-value value-high">500</span>
                   </b-col>
                 </b-row>
               </b-col>
@@ -172,8 +154,13 @@
 </template>
 
 <script>
+import BaseSlider from '@/components/BaseSlider'
+
 export default {
-  name: 'Header'
+  name: 'Header',
+  components: {
+    BaseSlider
+  }
 };
 </script>
 
