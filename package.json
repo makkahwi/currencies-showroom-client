@@ -1,7 +1,16 @@
 {
-  "name": "bootstrap-vue-argon-dashboard-pro",
+  "name": "currencies-showroom-fe",
+  "description": "A Vue.js Project",
   "version": "1.1.0",
   "private": true,
+  "author": {
+    "name": "Suhaib Ahmad",
+    "url": "https://Suhaib.dev",
+    "github": "https://github.com/makkahwi",
+    "facebook": "https://facebook.com/makkahwi",
+    "linkedin": "https://linkedin.com/in/makkahwi",
+    "email": "SuhaibAhmadAi@hotmail.com"
+  },
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
@@ -60,7 +69,5 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 10"
-  ],
-  "author": "Creative Tim - https://www.creative-tim.com/",
-  "description": "BootstrapVue Argon Dashboard PRO"
+  ]
 }
