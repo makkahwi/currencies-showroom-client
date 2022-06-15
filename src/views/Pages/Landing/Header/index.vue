@@ -1,5 +1,5 @@
 <template>
-  <div class="header bg-default pt-7 pb-7 min-vh-100">
+  <div class="header bg-gradient-default pt-7 pb-7 min-vh-100">
     <b-container>
       <div class="header-body">
         <b-row align-v="center">
