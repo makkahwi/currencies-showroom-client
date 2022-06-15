@@ -36,8 +36,6 @@ const Pricing = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Pric
 const TimeLine = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/TimeLinePage.vue');
 const Login = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Login.vue');
 const Home = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Landing');
-const Register = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Register.vue');
-const Lock = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Lock.vue');
 
 // TableList pages
 const RegularTables = () => import(/* webpackChunkName: "tables" */ '@/views/Tables/RegularTables.vue');
@@ -186,19 +184,9 @@ let authPages = {
       component: Login
     },
     {
-      path: '/register',
-      name: 'Register',
-      component: Register
-    },
-    {
       path: '/pricing',
       name: 'Pricing',
       component: Pricing
-    },
-    {
-      path: '/lock',
-      name: 'Lock',
-      component: Lock
     },
     { path: '*', component: NotFound }
   ]

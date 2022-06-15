@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="py-6" v-for="(image, i) in images" :key="`image${i}`">
+    <section class="py-6 bg-secondary" v-for="(image, i) in images" :key="`image${i}`">
       <b-container>
         <b-row align-v="center" class="row-grid">
           <b-col md="6" class="order-md-1" v-if="image.direction === 'right'">
