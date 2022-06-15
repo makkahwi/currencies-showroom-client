@@ -9,13 +9,21 @@
             <card header-classes="bg-transparent" body-classes="px-3" class="card-pricing border-0 text-center mb-4">
 
               <span class="text-muted py-2">
-                List View VS Gallery View
+                <base-switch @input="() => setView()" on-text="List" off-text="Gal" type="default" />
               </span>
 
-              <b-row>
+              <b-row v-if="view === 'gallery'">
                 <GalleryCard v-for="(currency, i) in currencies" :key="`currency${i}`" :front="currency.front"
                   :back="currency.back" :nation="currency.nation" :currency="currency.currency"
                   :circuable="currency.circuable" :issueDate="currency.issueDate" :dissolved="currency.dissolved" />
+              </b-row>
+
+              <b-row v-else-if="view === 'list'">
+                <b-col xs="12" v-for="(currency, i) in currencies" :key="`currency${i}`">
+                  <ListCard :front="currency.front" :back="currency.back" :nation="currency.nation"
+                    :currency="currency.currency" :circuable="currency.circuable" :issueDate="currency.issueDate"
+                    :dissolved="currency.dissolved" />
+                </b-col>
               </b-row>
 
               <a slot="footer" class="text-light">
@@ -34,20 +42,29 @@
 <script>
 import Header from './Header';
 import GalleryCard from './GalleryCard';
+import ListCard from './ListCard';
 
 export default {
   name: 'Showroom',
   components: {
     Header,
-    GalleryCard
+    GalleryCard,
+    ListCard
   },
   data() {
     return {
       currencies: [{
-        front: "currency.front", back: "currency.back",
+        // front: "", back: "",
         nation: "currency.nation", currency: "currency.currency", circuable: true,
-        issueDate: "currency.issueDate", dissolved: false
-      }]
+        issueDate: new Date(), dissolved: false
+      }],
+      view: "gallery"
+    }
+  },
+  methods: {
+    setView() {
+      console.log()
+      this.view === 'gallery' ? this.view = 'list' : this.view = 'gallery'
     }
   }
 };
