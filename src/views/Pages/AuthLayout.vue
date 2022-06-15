@@ -16,6 +16,7 @@
                 <img src="img/brand/green.png">
               </router-link>
             </b-col>
+
             <b-col cols="6" class="collapse-close">
               <button type="button" class="navbar-toggler" @click="showMenu = false">
                 <span></span>
@@ -26,71 +27,38 @@
         </div>
 
         <b-navbar-nav class="mr-auto">
+          <b-nav-item to="/">
+            <span class="nav-link-inner--text">Home</span>
+          </b-nav-item>
+
           <b-nav-item to="/dashboard">
             <span class="nav-link-inner--text">Dashboard</span>
           </b-nav-item>
-          <b-nav-item to="/pricing">
-            <span class="nav-link-inner--text">Pricing</span>
-          </b-nav-item>
-          <b-nav-item to="/login">
-            <span class="nav-link-inner--text">Login</span>
-          </b-nav-item>
-          <b-nav-item to="/register">
-            <span class="nav-link-inner--text">Register</span>
-          </b-nav-item>
-          <b-nav-item to="/lock">
-            <span class="nav-link-inner--text">Lock</span>
+
+          <b-nav-item to="/showroom">
+            <span class="nav-link-inner--text">Showroom</span>
           </b-nav-item>
         </b-navbar-nav>
+
         <hr class="d-lg-none">
-        <b-navbar-nav class="align-items-lg-center ml-lg-auto">
-          <b-nav-item link-classes="nav-link-icon" href="https://www.facebook.com/creativetim" target="_blank"
-            data-toggle="tooltip" data-original-title="Like us on Facebook">
-            <i class="fab fa-facebook-square"></i>
-            <span class="nav-link-inner--text d-lg-none">Facebook</span>
-          </b-nav-item>
-          <b-nav-item link-classes="nav-link-icon" href="https://www.instagram.com/creativetimofficial" target="_blank"
-            data-toggle="tooltip" data-original-title="Follow us on Instagram">
-            <i class="fab fa-instagram"></i>
-            <span class="nav-link-inner--text d-lg-none">Instagram</span>
-          </b-nav-item>
-          <b-nav-item link-classes="nav-link-icon" href="https://twitter.com/creativetim" target="_blank"
-            data-toggle="tooltip" data-original-title="Follow us on Twitter">
-            <i class="fab fa-twitter-square"></i>
-            <span class="nav-link-inner--text d-lg-none">Twitter</span>
-          </b-nav-item>
-          <b-nav-item link-classes="nav-link-icon" href="https://github.com/creativetimofficial" target="_blank"
-            data-toggle="tooltip" data-original-title="Star us on Github">
-            <i class="fab fa-github"></i>
-            <span class="nav-link-inner--text d-lg-none">Github</span>
-          </b-nav-item>
-          <!-- This item dont have <b-nav-item> because they add class 'nav-link' which is not needed here -->
-          <li class="nav-item d-none d-lg-block ml-lg-4">
-            <a href="https://www.creative-tim.com/product/bootstrap-vue-argon-dashboard-pro?ref=bvadp-index-page"
-              target="_blank" class="btn btn-neutral btn-icon">
-              <span class="btn-inner--icon">
-                <i class="fas fa-shopping-cart mr-2"></i>
-              </span>
-              <span class="nav-link-inner--text">Purchase now</span>
-            </a>
-          </li>
-        </b-navbar-nav>
+
+        <SocialsNav />
       </template>
     </base-nav>
 
-    <div class="main-content">
+    <div class="main-content bg-secondary">
       <zoom-center-transition :duration="pageTransitionDuration" mode="out-in">
         <router-view></router-view>
       </zoom-center-transition>
     </div>
 
-    <footer class="py-5" id="footer-main">
+    <footer class="py-5 bg-secondary" id="footer-main">
       <b-container>
         <b-row align-v="center" class="justify-content-xl-between">
           <b-col xl="6">
             <div class="copyright text-center text-xl-left text-muted">
               All rights Reserved © {{ year }}
-              <a href="https://Suhaib.dev" class="font-weight-bold ml-1 text-default" target="_blank">
+              <a href="https://Suhaib.dev" class="font-weight-bold ml-1 text-info" target="_blank">
                 Suhaib Ahmad
               </a>
             </div>
@@ -124,11 +92,13 @@
 <script>
 import { BaseNav } from '@/components';
 import { ZoomCenterTransition } from 'vue2-transitions';
+import SocialsNav from './Socials.vue';
 
 export default {
   components: {
     BaseNav,
-    ZoomCenterTransition
+    ZoomCenterTransition,
+    SocialsNav
   },
   props: {
     backgroundColor: {
