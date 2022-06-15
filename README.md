@@ -1,6 +1,8 @@
-# vue
+# Currencies Showroom
 
-Welcome to my second trial on Vue.Js
+Welcome to my Currencies Showroom
+
+(Built On Vue.Js)
 
 ## How to start
 
