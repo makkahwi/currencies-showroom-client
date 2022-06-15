@@ -15,7 +15,7 @@
           name: 'Examples',
           icon: 'ni ni-ungroup text-orange'
         }">
-          <sidebar-item :link="{ name: 'Pricing', path: '/pricing' }" />
+          <sidebar-item :link="{ name: 'Showroom', path: '/showroom' }" />
           <sidebar-item :link="{ name: 'Login', path: '/login' }" />
           <sidebar-item :link="{ name: 'Timeline', path: '/pages/timeline' }" />
           <sidebar-item :link="{ name: 'Profile', path: '/pages/user' }" />

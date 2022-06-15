@@ -32,7 +32,7 @@ const VectorMaps = () => import(/* webpackChunkName: "extra" */ '@/views/Maps/Ve
 
 // Pages
 const User = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/UserProfile.vue');
-const Pricing = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Pricing.vue');
+const Showroom = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Showroom');
 const TimeLine = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/TimeLinePage.vue');
 const Login = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Login.vue');
 const Home = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Landing');
@@ -184,9 +184,9 @@ let authPages = {
       component: Login
     },
     {
-      path: '/pricing',
-      name: 'Pricing',
-      component: Pricing
+      path: '/showroom',
+      name: 'Showroom',
+      component: Showroom
     },
     { path: '*', component: NotFound }
   ]
