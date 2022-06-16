@@ -3,6 +3,9 @@ import AuthLayout from '@/views/Pages/AuthLayout.vue';
 // GeneralViews
 import NotFound from '@/views/GeneralViews/NotFoundPage.vue';
 
+const Dashboard = () => import(/* webpackChunkName: "dashboard" */ '@/views/Dashboard/Dashboard.vue');
+const NewCurrency = () => import(/* webpackChunkName: "dashboard" */ '@/views/Currencies/NewCurrency.vue');
+
 // Calendar
 const Calendar = () => import(/* webpackChunkName: "extra" */ '@/views/Calendar/Calendar.vue');
 // Charts
@@ -17,7 +20,6 @@ const Icons = () => import(/* webpackChunkName: "components" */ '@/views/Compone
 const Typography = () => import(/* webpackChunkName: "components" */ '@/views/Components/Typography.vue');
 
 // Dashboard pages
-const Dashboard = () => import(/* webpackChunkName: "dashboard" */ '@/views/Dashboard/Dashboard.vue');
 const AlternativeDashboard = () => import(/* webpackChunkName: "dashboard" */ '@/views/Dashboard/AlternativeDashboard.vue');
 const Widgets = () => import(/* webpackChunkName: "dashboard" */ '@/views/Widgets.vue');
 
@@ -213,6 +215,11 @@ const routes = [
         path: 'dashboard',
         name: 'Dashboard',
         component: Dashboard
+      },
+      {
+        path: 'newcurrency',
+        name: 'NewCurrency',
+        component: NewCurrency
       },
       {
         path: 'alternative',

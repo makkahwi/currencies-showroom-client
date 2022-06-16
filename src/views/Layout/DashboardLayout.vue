@@ -8,6 +8,7 @@
           icon: 'ni ni-shop text-primary',
         }">
           <sidebar-item :link="{ name: 'Dashboard', path: '/dashboard' }"></sidebar-item>
+          <sidebar-item :link="{ name: 'New Currency', path: '/newcurrency' }"></sidebar-item>
           <sidebar-item :link="{ name: 'Alternative', path: '/alternative' }"></sidebar-item>
         </sidebar-item>
 
