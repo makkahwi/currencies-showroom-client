@@ -33,7 +33,7 @@ export default {
   data() {
     return {
       stats: [{
-        title: "Pieces Counts",
+        title: "Pieces Count",
         count: "350",
         color: "green",
         icon: "chart-bar-32",
@@ -42,8 +42,8 @@ export default {
         up: true
       },
       {
-        title: "Total traffic",
-        count: "2,356",
+        title: "Pieces Target",
+        count: "50%",
         color: "orange",
         icon: "chart-pie-35",
         subcount: "12.18%",

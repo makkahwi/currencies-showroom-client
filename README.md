@@ -13,13 +13,13 @@ It's a web app to publish one's collection of currencies from all over the world
   - Landing introductory page.
   - Public showroom page with filters.
 - Admin
-  - Statistics dashboard.
+  - Statistics dashboard (Counts, Targets).
   - Currencies mgmt module.
 
 ## To-Do Features
 
-- Dashboard targets calculation
 - Automated currencies evaluation.
+- Dashboard charts
 - Monthly progress (Timeline)
 
 ## Feature Works

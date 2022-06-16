@@ -3,29 +3,30 @@
     <template v-slot:header>
       <b-row align-v="center">
         <b-col>
-          <h3 class="mb-0">Basic Counts</h3>
+          <h3 class="mb-0">Statistics</h3>
         </b-col>
 
         <b-col class="text-right">
-          <a class="btn btn-sm btn-default">See all</a>
+          <a class="btn btn-sm btn-default" @click="setType">Type</a>
+
+          <div class="btn-group">
+            <a class="btn btn-sm btn-info" @click="setTarget">Targets</a>
+            <a class="btn btn-sm btn-default" @click="setTarget(true)">See all</a>
+          </div>
         </b-col>
       </b-row>
     </template>
 
-    <div class="text-center mx-3 mb-3">
-      <table class="table table-responsive table-sm table-striped table-hover text-center" width="100%">
+    <div class="mx-5 mb-3">
+      <table class="table table-responsive table-sm table-striped table-hover text-center">
         <thead>
           <tr class="bg-info text-default">
             <th rowspan="100%"> Circability </th>
             <th rowspan="100%"> Continent </th>
-            <th colspan="3"> Banknotes </th>
-            <th colspan="3"> Coins </th>
+            <th colspan="3"> {{ dataShow.coins ? 'Coins' : 'Banknotes' }} </th>
           </tr>
 
           <tr class="bg-info text-default">
-            <th> Pieces </th>
-            <th> Unique Pieces </th>
-            <th> Countries </th>
             <th> Pieces </th>
             <th> Unique Pieces </th>
             <th> Countries </th>
@@ -37,11 +38,29 @@
             <td rowspan="5"> Circuable </td>
             <td> Africa </td>
             <td> 51 </td>
-            <td> 51 </td>
-            <td> 12 </td>
-            <td> 29 </td>
-            <td> 29 </td>
-            <td> 7 </td>
+
+            <td>
+              <div v-if="dataShow.target" class="d-flex align-items-center">
+                <span class="mx-1">51/100</span>
+                <BaseProgress type="gradient-default" :value="51" />
+                <span class="mx-1">51%</span>
+              </div>
+              <span v-else>
+                51
+              </span>
+            </td>
+
+            <td>
+              <div v-if="dataShow.target" class="d-flex align-items-center">
+                <span class="mx-1">12/50</span>
+                <BaseProgress type="gradient-info" :value="25" />
+                <span class="mx-1">25%</span>
+              </div>
+              <span v-else>
+                12
+              </span>
+            </td>
+
           </tr>
 
           <tr>
@@ -49,9 +68,6 @@
             <td> 51 </td>
             <td> 51 </td>
             <td> 12 </td>
-            <td> 29 </td>
-            <td> 29 </td>
-            <td> 7 </td>
           </tr>
 
           <tr>
@@ -59,9 +75,6 @@
             <td> 51 </td>
             <td> 51 </td>
             <td> 12 </td>
-            <td> 29 </td>
-            <td> 29 </td>
-            <td> 7 </td>
           </tr>
 
           <tr>
@@ -69,9 +82,6 @@
             <td> 51 </td>
             <td> 51 </td>
             <td> 12 </td>
-            <td> 29 </td>
-            <td> 29 </td>
-            <td> 7 </td>
           </tr>
 
           <tr>
@@ -79,9 +89,6 @@
             <td> 51 </td>
             <td> 51 </td>
             <td> 12 </td>
-            <td> 29 </td>
-            <td> 29 </td>
-            <td> 7 </td>
           </tr>
 
           <tr>
@@ -93,9 +100,6 @@
             <td> 51 </td>
             <td> 51 </td>
             <td> 12 </td>
-            <td> 29 </td>
-            <td> 29 </td>
-            <td> 7 </td>
           </tr>
 
           <tr>
@@ -103,9 +107,6 @@
             <td> 51 </td>
             <td> 51 </td>
             <td> 12 </td>
-            <td> 29 </td>
-            <td> 29 </td>
-            <td> 7 </td>
           </tr>
 
           <tr>
@@ -113,9 +114,6 @@
             <td> 51 </td>
             <td> 51 </td>
             <td> 12 </td>
-            <td> 29 </td>
-            <td> 29 </td>
-            <td> 7 </td>
           </tr>
 
           <tr>
@@ -123,9 +121,6 @@
             <td> 51 </td>
             <td> 51 </td>
             <td> 12 </td>
-            <td> 29 </td>
-            <td> 29 </td>
-            <td> 7 </td>
           </tr>
 
           <tr>
@@ -133,9 +128,6 @@
             <td> 51 </td>
             <td> 51 </td>
             <td> 12 </td>
-            <td> 29 </td>
-            <td> 29 </td>
-            <td> 7 </td>
           </tr>
         </tbody>
       </table>
@@ -145,10 +137,12 @@
 
 <script>
 import { Table, TableColumn, DropdownMenu, DropdownItem, Dropdown } from 'element-ui'
+import { BaseProgress } from '@/components';
 
 export default {
   name: 'SummaryStats',
   components: {
+    BaseProgress,
     [Table.name]: Table,
     [TableColumn.name]: TableColumn,
     [Dropdown.name]: Dropdown,
@@ -157,6 +151,10 @@ export default {
   },
   data() {
     return {
+      dataShow: {
+        target: true,
+        coins: true
+      },
       tableData: [
         {
           page: '/argon/',
@@ -194,6 +192,14 @@ export default {
           bounceRateDirection: 'down'
         }
       ]
+    }
+  },
+  methods: {
+    setTarget(input) {
+      this.dataShow.target = input | !this.dataShow.target
+    },
+    setType(input) {
+      this.dataShow.coins = input | !this.dataShow.coins
     }
   }
 }
