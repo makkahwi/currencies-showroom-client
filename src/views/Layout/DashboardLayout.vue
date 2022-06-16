@@ -126,8 +126,8 @@
     </div>
   </div>
 </template>
+
 <script>
-/* eslint-disable no-new */
 import PerfectScrollbar from 'perfect-scrollbar';
 import 'perfect-scrollbar/css/perfect-scrollbar.css';
 
@@ -169,5 +169,6 @@ export default {
   }
 };
 </script>
+
 <style lang="scss">
 </style>

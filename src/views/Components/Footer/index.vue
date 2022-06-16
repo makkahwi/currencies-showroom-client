@@ -43,6 +43,12 @@ export default {
       default: 'black'
     }
   },
+  data() {
+    return {
+      year: today.getFullYear(),
+      today: format(today, "MMM dd"),
+    };
+  },
 };
 </script>
 

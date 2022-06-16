@@ -3,7 +3,7 @@ import AuthLayout from '@/views/Pages/AuthLayout.vue';
 // GeneralViews
 import NotFound from '@/views/GeneralViews/NotFoundPage.vue';
 
-const Dashboard = () => import(/* webpackChunkName: "dashboard" */ '@/views/Dashboard/Dashboard.vue');
+const Dashboard = () => import(/* webpackChunkName: "dashboard" */ '@/views/Dashboard/');
 const NewCurrency = () => import(/* webpackChunkName: "dashboard" */ '@/views/Currencies/NewCurrency.vue');
 const Currencies = () => import(/* webpackChunkName: "dashboard" */ '@/views/Currencies/');
 
