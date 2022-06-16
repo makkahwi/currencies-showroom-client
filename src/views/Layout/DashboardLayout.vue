@@ -8,6 +8,8 @@
           icon: 'ni ni-shop text-primary',
         }">
           <sidebar-item :link="{ name: 'Dashboard', path: '/dashboard' }"></sidebar-item>
+          <sidebar-item :link="{ name: 'New Currency', path: '/newcurrency' }"></sidebar-item>
+          <sidebar-item :link="{ name: 'Currencies', path: '/currencies' }"></sidebar-item>
           <sidebar-item :link="{ name: 'Alternative', path: '/alternative' }"></sidebar-item>
         </sidebar-item>
 
@@ -119,7 +121,8 @@
           <router-view></router-view>
         </fade-transition>
       </div>
-      <content-footer v-if="!$route.meta.hideFooter"></content-footer>
+
+      <Footer />
     </div>
   </div>
 </template>
@@ -144,13 +147,13 @@ function initScrollbar(className) {
 }
 
 import DashboardNavbar from './DashboardNavbar.vue';
-import ContentFooter from './ContentFooter.vue';
+import Footer from '../Components/Footer';
 import { FadeTransition } from 'vue2-transitions';
 
 export default {
   components: {
     DashboardNavbar,
-    ContentFooter,
+    Footer,
     FadeTransition
   },
   methods: {
