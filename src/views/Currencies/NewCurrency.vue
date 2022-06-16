@@ -134,7 +134,7 @@
 
           <b-card-footer>
             <base-button icon type="success" class="float-right" @click="saveData">
-              <span class="btn-inner--icon"><i class="ni ni-check-bold"></i></span>
+              <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
               <span class="btn-inner--text">Add</span>
             </base-button>
           </b-card-footer>

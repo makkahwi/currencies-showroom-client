@@ -5,6 +5,7 @@ import NotFound from '@/views/GeneralViews/NotFoundPage.vue';
 
 const Dashboard = () => import(/* webpackChunkName: "dashboard" */ '@/views/Dashboard/Dashboard.vue');
 const NewCurrency = () => import(/* webpackChunkName: "dashboard" */ '@/views/Currencies/NewCurrency.vue');
+const Currencies = () => import(/* webpackChunkName: "dashboard" */ '@/views/Currencies/');
 
 // Calendar
 const Calendar = () => import(/* webpackChunkName: "extra" */ '@/views/Calendar/Calendar.vue');
@@ -220,6 +221,11 @@ const routes = [
         path: 'newcurrency',
         name: 'NewCurrency',
         component: NewCurrency
+      },
+      {
+        path: 'currencies',
+        name: 'Currencies',
+        component: Currencies
       },
       {
         path: 'alternative',
