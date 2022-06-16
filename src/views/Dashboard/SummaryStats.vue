@@ -34,19 +34,24 @@
         </thead>
 
         <tbody>
-          <tr>
-            <td rowspan="5"> Circuable </td>
-            <td> Africa </td>
-            <td> 51 </td>
+          <tr v-for="(continent, i) in continents" :key="i">
+            <td> Circuable </td>
+            <td> {{ continent }} </td>
+            <td> {{ statData().filter(data => data.circuable && data.continent === continent).length }} </td>
 
             <td>
               <div v-if="dataShow.target" class="d-flex align-items-center">
-                <span class="mx-1">51/100</span>
-                <BaseProgress type="gradient-default" :value="51" />
-                <span class="mx-1">51%</span>
+                <span class="mx-1">{{ statData().filter(data => data.circuable && data.continent === continent).length
+                }}/{{ statData().filter(data => data.circuable).length }}</span>
+                <BaseProgress type="gradient-default"
+                  :value="statData().filter(data => data.circuable && data.continent === continent).length / statData().length * 100" />
+                <span class="mx-1">{{ statData().filter(data => data.circuable && data.continent === continent).length
+                    / statData().filter(data => data.circuable).length * 100
+                }}%</span>
               </div>
+
               <span v-else>
-                51
+                {{ statData().filter(data => data.circuable && data.continent === continent).length }}
               </span>
             </td>
 
@@ -60,74 +65,39 @@
                 12
               </span>
             </td>
-
           </tr>
 
-          <tr>
-            <td> Americas </td>
-            <td> 51 </td>
-            <td> 51 </td>
-            <td> 12 </td>
-          </tr>
+          <tr v-for="(continent, i) in continents" :key="i">
+            <td> Outdated </td>
+            <td> {{ continent }} </td>
+            <td> {{ statData().filter(data => !data.circuable && data.continent === continent).length }} </td>
 
-          <tr>
-            <td> Asia </td>
-            <td> 51 </td>
-            <td> 51 </td>
-            <td> 12 </td>
-          </tr>
+            <td>
+              <div v-if="dataShow.target" class="d-flex align-items-center">
+                <span class="mx-1">{{ statData().filter(data => !data.circuable && data.continent === continent).length
+                }}/{{ statData().filter(data => !data.circuable).length }}</span>
+                <BaseProgress type="gradient-default"
+                  :value="statData().filter(data => !data.circuable && data.continent === continent).length / statData().length * 100" />
+                <span class="mx-1">{{ statData().filter(data => !data.circuable && data.continent === continent).length
+                    / statData().filter(data => !data.circuable).length * 100
+                }}%</span>
+              </div>
 
-          <tr>
-            <td> Europe </td>
-            <td> 51 </td>
-            <td> 51 </td>
-            <td> 12 </td>
-          </tr>
-
-          <tr>
-            <td> Oceania </td>
-            <td> 51 </td>
-            <td> 51 </td>
-            <td> 12 </td>
-          </tr>
-
-          <tr>
-            <td rowspan="5">
-              Oudated
+              <span v-else>
+                {{ statData().filter(data => !data.circuable && data.continent === continent).length }}
+              </span>
             </td>
 
-            <td> Africa </td>
-            <td> 51 </td>
-            <td> 51 </td>
-            <td> 12 </td>
-          </tr>
-
-          <tr>
-            <td> Americas </td>
-            <td> 51 </td>
-            <td> 51 </td>
-            <td> 12 </td>
-          </tr>
-
-          <tr>
-            <td> Asia </td>
-            <td> 51 </td>
-            <td> 51 </td>
-            <td> 12 </td>
-          </tr>
-
-          <tr>
-            <td> Europe </td>
-            <td> 51 </td>
-            <td> 51 </td>
-            <td> 12 </td>
-          </tr>
-
-          <tr>
-            <td> Oceania </td>
-            <td> 51 </td>
-            <td> 51 </td>
-            <td> 12 </td>
+            <td>
+              <div v-if="dataShow.target" class="d-flex align-items-center">
+                <span class="mx-1">12/50</span>
+                <BaseProgress type="gradient-info" :value="25" />
+                <span class="mx-1">25%</span>
+              </div>
+              <span v-else>
+                12
+              </span>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -138,6 +108,8 @@
 <script>
 import { Table, TableColumn, DropdownMenu, DropdownItem, Dropdown } from 'element-ui'
 import { BaseProgress } from '@/components';
+import listingData from "@/listingData"
+import currenciesData from "@/currenciesData"
 
 export default {
   name: 'SummaryStats',
@@ -151,6 +123,9 @@ export default {
   },
   data() {
     return {
+      listingData,
+      currenciesData,
+      continents: [null],
       dataShow: {
         target: true,
         coins: true
@@ -200,6 +175,12 @@ export default {
     },
     setType(input) {
       this.dataShow.coins = input | !this.dataShow.coins
+    },
+    statData() {
+      const data = listingData.map(listing => ({ ...listing, ...currenciesData.find(currency => currency.code === listing.currency) }));
+      this.continents = data.map(dat => dat.continent).filter((value, i, final) => final.indexOf(value) === i)
+
+      return data;
     }
   }
 }

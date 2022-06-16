@@ -14,7 +14,7 @@ export default [
   },
   {
     id: 2,
-    circuable: true,
+    circuable: false,
     type: "Mr. Enid Von PhD",
     unit: "alias",
     currency: "MYR",
@@ -274,7 +274,7 @@ export default [
   },
   {
     id: 22,
-    circuable: true,
+    circuable: false,
     type: "Krista Schulist",
     unit: "qui",
     currency: "MYR",
@@ -599,7 +599,7 @@ export default [
   },
   {
     id: 47,
-    circuable: true,
+    circuable: false,
     type: "Brooke Purdy",
     unit: "cupiditate",
     currency: "EUR",
