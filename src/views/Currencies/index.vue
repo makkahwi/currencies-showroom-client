@@ -157,7 +157,7 @@ export default {
     },
     handleLike(index, row) {
       swal.fire({
-        title: `You liked ${row.name}`,
+        title: `You liked ${row.country}'s currency`,
         buttonsStyling: false,
         type: 'success',
         confirmButtonClass: 'btn btn-success btn-fill'
@@ -165,7 +165,7 @@ export default {
     },
     handleEdit(index, row) {
       swal.fire({
-        title: `You want to edit ${row.name}`,
+        title: `You want to edit ${row.name}'s currency`,
         buttonsStyling: false,
         confirmButtonClass: 'btn btn-info btn-fill'
       });
