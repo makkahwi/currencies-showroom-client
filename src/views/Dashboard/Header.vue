@@ -1,10 +1,10 @@
 <template>
-  <base-header class="pb-6">
+  <base-header type="info" class="pb-6">
     <b-row aling-v="center" class="py-4">
       <b-col cols="7" lg="6">
         <h6 class="h2 text-white d-inline-block mb-0">Dashboard</h6>
         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-          <route-bread-crumb></route-bread-crumb>
+          <route-bread-crumb />
         </nav>
       </b-col>
 
@@ -33,12 +33,12 @@ export default {
   data() {
     return {
       stats: [{
-        title: "Total traffic",
-        count: "350,897",
-        color: "red",
-        icon: "active-40",
+        title: "Pieces Counts",
+        count: "350",
+        color: "green",
+        icon: "chart-bar-32",
         subcount: "3.48%",
-        subtitle: "Since last month",
+        subtitle: "Since last year",
         up: true
       },
       {

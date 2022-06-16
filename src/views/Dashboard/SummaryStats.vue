@@ -3,42 +3,149 @@
     <template v-slot:header>
       <b-row align-v="center">
         <b-col>
-          <h3 class="mb-0">Basic Stats</h3>
+          <h3 class="mb-0">Basic Counts</h3>
         </b-col>
 
         <b-col class="text-right">
-          <a href="#!" class="btn btn-sm btn-primary">See all</a>
+          <a class="btn btn-sm btn-default">See all</a>
         </b-col>
       </b-row>
     </template>
 
-    <el-table class="table-responsive table" :data="tableData" header-row-class-name="thead-light">
-      <el-table-column label="Page name" sortable min-width="130px" prop="page">
-        <template v-slot="{ row }">
-          <div class="font-weight-600">{{ row.page }}</div>
-        </template>
-      </el-table-column>
+    <div class="text-center mx-3 mb-3">
+      <table class="table table-responsive table-sm table-striped table-hover text-center" width="100%">
+        <thead>
+          <tr class="bg-info text-default">
+            <th rowspan="100%"> Circability </th>
+            <th rowspan="100%"> Continent </th>
+            <th colspan="3"> Banknotes </th>
+            <th colspan="3"> Coins </th>
+          </tr>
 
-      <el-table-column label="Visitors" sortable min-width="70px" prop="visitors">
-      </el-table-column>
+          <tr class="bg-info text-default">
+            <th> Pieces </th>
+            <th> Unique Pieces </th>
+            <th> Countries </th>
+            <th> Pieces </th>
+            <th> Unique Pieces </th>
+            <th> Countries </th>
+          </tr>
+        </thead>
 
-      <el-table-column label="Unique users" sortable min-width="90px" prop="unique">
-      </el-table-column>
+        <tbody>
+          <tr>
+            <td rowspan="5"> Circuable </td>
+            <td> Africa </td>
+            <td> 51 </td>
+            <td> 51 </td>
+            <td> 12 </td>
+            <td> 29 </td>
+            <td> 29 </td>
+            <td> 7 </td>
+          </tr>
 
-      <el-table-column label="Bounce rate" sortable min-width="90px" prop="bounceRate">
-        <template v-slot="{ row }">
-          <i class="fas fa-arrow-up text-success mr-3"
-            :class="row.bounceRateDirection === 'up' ? 'text-success' : 'text-danger'">
-          </i>
-          {{ row.bounceRate }}
-        </template>
-      </el-table-column>
-    </el-table>
+          <tr>
+            <td> Americas </td>
+            <td> 51 </td>
+            <td> 51 </td>
+            <td> 12 </td>
+            <td> 29 </td>
+            <td> 29 </td>
+            <td> 7 </td>
+          </tr>
+
+          <tr>
+            <td> Asia </td>
+            <td> 51 </td>
+            <td> 51 </td>
+            <td> 12 </td>
+            <td> 29 </td>
+            <td> 29 </td>
+            <td> 7 </td>
+          </tr>
+
+          <tr>
+            <td> Europe </td>
+            <td> 51 </td>
+            <td> 51 </td>
+            <td> 12 </td>
+            <td> 29 </td>
+            <td> 29 </td>
+            <td> 7 </td>
+          </tr>
+
+          <tr>
+            <td> Oceania </td>
+            <td> 51 </td>
+            <td> 51 </td>
+            <td> 12 </td>
+            <td> 29 </td>
+            <td> 29 </td>
+            <td> 7 </td>
+          </tr>
+
+          <tr>
+            <td rowspan="5">
+              Oudated
+            </td>
+
+            <td> Africa </td>
+            <td> 51 </td>
+            <td> 51 </td>
+            <td> 12 </td>
+            <td> 29 </td>
+            <td> 29 </td>
+            <td> 7 </td>
+          </tr>
+
+          <tr>
+            <td> Americas </td>
+            <td> 51 </td>
+            <td> 51 </td>
+            <td> 12 </td>
+            <td> 29 </td>
+            <td> 29 </td>
+            <td> 7 </td>
+          </tr>
+
+          <tr>
+            <td> Asia </td>
+            <td> 51 </td>
+            <td> 51 </td>
+            <td> 12 </td>
+            <td> 29 </td>
+            <td> 29 </td>
+            <td> 7 </td>
+          </tr>
+
+          <tr>
+            <td> Europe </td>
+            <td> 51 </td>
+            <td> 51 </td>
+            <td> 12 </td>
+            <td> 29 </td>
+            <td> 29 </td>
+            <td> 7 </td>
+          </tr>
+
+          <tr>
+            <td> Oceania </td>
+            <td> 51 </td>
+            <td> 51 </td>
+            <td> 12 </td>
+            <td> 29 </td>
+            <td> 29 </td>
+            <td> 7 </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </b-card>
 </template>
 
 <script>
 import { Table, TableColumn, DropdownMenu, DropdownItem, Dropdown } from 'element-ui'
+
 export default {
   name: 'SummaryStats',
   components: {
