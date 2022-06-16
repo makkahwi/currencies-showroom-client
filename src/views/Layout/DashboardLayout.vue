@@ -122,7 +122,7 @@
         </fade-transition>
       </div>
 
-      <Footer v-if="!$route.meta.hideFooter" />
+      <Footer />
     </div>
   </div>
 </template>
