@@ -165,7 +165,7 @@ export default {
     },
     handleEdit(index, row) {
       swal.fire({
-        title: `You want to edit ${row.name}'s currency`,
+        title: `You want to edit ${row.country}'s currency`,
         buttonsStyling: false,
         confirmButtonClass: 'btn btn-info btn-fill'
       });

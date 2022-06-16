@@ -121,7 +121,8 @@
           <router-view></router-view>
         </fade-transition>
       </div>
-      <content-footer v-if="!$route.meta.hideFooter"></content-footer>
+
+      <Footer v-if="!$route.meta.hideFooter" />
     </div>
   </div>
 </template>
@@ -146,13 +147,13 @@ function initScrollbar(className) {
 }
 
 import DashboardNavbar from './DashboardNavbar.vue';
-import ContentFooter from './ContentFooter.vue';
+import Footer from '../Components/Footer';
 import { FadeTransition } from 'vue2-transitions';
 
 export default {
   components: {
     DashboardNavbar,
-    ContentFooter,
+    Footer,
     FadeTransition
   },
   methods: {

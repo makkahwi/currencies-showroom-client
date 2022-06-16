@@ -52,40 +52,7 @@
       </zoom-center-transition>
     </div>
 
-    <footer class="py-5 bg-secondary" id="footer-main">
-      <b-container>
-        <b-row align-v="center" class="justify-content-xl-between">
-          <b-col xl="6">
-            <div class="copyright text-center text-xl-left text-muted">
-              All rights Reserved © {{ year }}
-              <a href="https://Suhaib.dev" class="font-weight-bold ml-1 text-info" target="_blank">
-                Suhaib Ahmad
-              </a>
-            </div>
-          </b-col>
-
-          <!-- <b-col xl="6" class="col-xl-6">
-            <b-nav class="nav-footer justify-content-center justify-content-xl-end">
-              <b-nav-item href="https://www.creative-tim.com" target="_blank">
-                Creative Tim
-              </b-nav-item>
-
-              <b-nav-item href="https://www.creative-tim.com/presentation" target="_blank">
-                About Us
-              </b-nav-item>
-
-              <b-nav-item href="http://blog.creative-tim.com" target="_blank">
-                Blog
-              </b-nav-item>
-
-              <b-nav-item href="https://www.creative-tim.com/license" target="_blank">
-                License
-              </b-nav-item>
-            </b-nav>
-          </b-col> -->
-        </b-row>
-      </b-container>
-    </footer>
+    <Footer />
   </div>
 </template>
 
@@ -93,12 +60,13 @@
 import { BaseNav } from '@/components';
 import { ZoomCenterTransition } from 'vue2-transitions';
 import SocialsNav from './Socials.vue';
+import Footer from '../Components/Footer';
 
 export default {
   components: {
     BaseNav,
     ZoomCenterTransition,
-    SocialsNav
+    SocialsNav, Footer
   },
   props: {
     backgroundColor: {
