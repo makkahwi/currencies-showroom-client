@@ -18,12 +18,14 @@ It's a web app to publish one's collection of currencies from all over the world
 
 ## To-Do Features
 
+- Dashboard targets calculation
 - Automated currencies evaluation.
+- Monthly progress (Timeline)
 
 ## Feature Works
 
 - Build a centralized & community-contribution-based database for currency updates.
-- Hardcoded meta data to dynamic.
+- Hardcoded meta data to dynamic (Admin Profile).
 - Transform into a centralized web services for all collectors.
   - Registration & subscriptions mgmt sys.
   - Auto subdomain creation & deployment.
