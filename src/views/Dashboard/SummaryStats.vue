@@ -45,8 +45,8 @@
                 }}/{{ statData().filter(data => data.circuable).length }}</span>
                 <BaseProgress type="gradient-default"
                   :value="statData().filter(data => data.circuable && data.continent === continent).length / statData().length * 100" />
-                <span class="mx-1">{{ statData().filter(data => data.circuable && data.continent === continent).length
-                    / statData().filter(data => data.circuable).length * 100
+                <span class="mx-1">{{ Math.round(statData().filter(data => data.circuable && data.continent ===
+                    continent).length / statData().filter(data => data.circuable).length * 100)
                 }}%</span>
               </div>
 
@@ -78,8 +78,9 @@
                 }}/{{ statData().filter(data => !data.circuable).length }}</span>
                 <BaseProgress type="gradient-default"
                   :value="statData().filter(data => !data.circuable && data.continent === continent).length / statData().length * 100" />
-                <span class="mx-1">{{ statData().filter(data => !data.circuable && data.continent === continent).length
-                    / statData().filter(data => !data.circuable).length * 100
+                <span class="mx-1">{{ Math.round(statData().filter(data => !data.circuable && data.continent ===
+                    continent).length
+                    / statData().filter(data => !data.circuable).length * 100)
                 }}%</span>
               </div>
 
