@@ -4,32 +4,22 @@
       <card header-classes="m-0 p-0" class="card-pricing border-0 text-center text-sm my-2">
         <a href="#" class="text-light">
           <div slot="header">
-            <img :src="front" width="100%" />
+            <img :src="imgF" width="100%" />
 
-            <img :src="back" width="100%" />
+            <img :src="imgB" width="100%" />
           </div>
 
-          <b-row align-v="center">
-            <b-col xs="6" class="text-default my-2">
-              Nation
-              <span class="font-weight-bold ">
-                {{ nation }}
-              </span>
-            </b-col>
+          <b-col class="text-default my-2">
+            <span class="font-weight-bold ">
+              {{ `${currency} ${value} of ${nation}` }}
+            </span>
+          </b-col>
 
-            <b-col xs="6" class="text-default my-2">
-              Currency
-              <span class="font-weight-bold ">
-                {{ currency }}
-              </span>
-            </b-col>
-
-            <b-col xs="12" class="text-default mt-2">
-              {{ circuable ? "Circuable" : "Outdated" }} ({{ issueDate.toLocaleDateString() }}) {{ dissolved ?
-                  "DISSOLVED" : ""
-              }}
-            </b-col>
-          </b-row>
+          <b-col class="text-default mt-2">
+            {{ circability ? "Circuable" : "Outdated" }} ({{ issueyear }}) {{ dissolved ?
+                "DISSOLVED" : ""
+            }}
+          </b-col>
         </a>
       </card>
     </b-card-group>
@@ -40,11 +30,11 @@
 export default {
   name: 'GalleryCard',
   props: {
-    front: {
+    imgF: {
       type: String,
       default: 'https://wadirumclassictours.webnode.com/_files/200020389-979919987d/jordanian-money-1-dinar01.jpg',
     },
-    back: {
+    imgB: {
       type: String,
       default: 'https://wadirumclassictours.webnode.com/_files/200020390-5432d552e0/jordanian-money-1-dinar02.jpg',
     },
@@ -54,15 +44,19 @@ export default {
     },
     currency: {
       type: String,
-      default: 'Dinar',
+      default: 'JOD',
     },
-    circuable: {
+    value: {
+      type: Number,
+      default: 0,
+    },
+    issueyear: {
+      type: Number,
+      default: 2000,
+    },
+    circability: {
       type: Boolean,
       default: true,
-    },
-    issueDate: {
-      type: Date,
-      default: new Date(),
     },
     dissolved: {
       type: Boolean,

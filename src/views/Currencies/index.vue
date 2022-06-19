@@ -47,7 +47,7 @@
               <el-table-column v-for="column in tableColumns" :key="column.label" v-bind="column">
               </el-table-column>
 
-              <el-table-column min-width="180px" align="right" label="Actions">
+              <el-table-column min-width="100px" label="Actions">
                 <div slot-scope="{$index, row}" class="d-flex">
                   <div class="btn-group">
                     <base-button @click.native="handleLike($index, row)" class="like btn-link" type="info" size="sm"
@@ -96,7 +96,7 @@ import RouteBreadCrumb from '@/components/Breadcrumb/RouteBreadcrumb'
 import { BasePagination } from '@/components';
 import clientPaginationMixin from './clientPaginationMixin'
 import swal from 'sweetalert2';
-import users from './users2';
+import listingData from '@/listingData';
 
 export default {
   name: "CurrenciesTable",
@@ -117,23 +117,18 @@ export default {
           type: 'selection'
         },
         {
-          prop: 'type',
-          label: 'Type',
-          sortable: true
-        },
-        {
-          prop: 'value',
-          label: 'Value',
-          sortable: true
-        },
-        {
-          prop: 'country',
+          prop: 'nation',
           label: 'Country',
           sortable: true
         },
         {
-          prop: 'circuable',
-          label: 'Circability',
+          prop: 'currency',
+          label: 'Currency',
+          sortable: true
+        },
+        {
+          prop: 'type',
+          label: 'Type',
           sortable: true
         },
         {
@@ -142,12 +137,17 @@ export default {
           sortable: true
         },
         {
+          prop: 'count',
+          label: 'Count',
+          sortable: true
+        },
+        {
           prop: 'collection',
           label: 'Collection Date',
           sortable: true
         }
       ],
-      tableData: users,
+      tableData: listingData,
       selectedRows: []
     };
   },

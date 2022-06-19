@@ -2,42 +2,60 @@
   <b-card-group class="pricing flex-column flex-md-row">
     <card class="card-pricing border-0 text-left text-sm my-2">
       <a href="#" class="text-light">
-        <table class="table table-">
+        <table class="table table-responsive">
           <tbody>
             <tr>
-              <td rowspan="100%" class="text-center">
-                <img :src="front" height="45vh" />
+              <td rowspan="100%" class="align-middle text-center">
+                <img :src="imgF" height="95vh" />
                 <br />
-                <img :src="back" height="45vh" />
+                <img :src="imgB" height="95vh" />
+                <br />
+                <br />
+                {{ type }}
               </td>
 
-              <td>
+              <td class="align-middle">
                 Nation
               </td>
 
-              <th>
+              <th class="align-middle">
                 <b>
                   {{ nation }}
                 </b>
               </th>
 
-              <td colspan="2">
-                {{ circuable ? "Circuable" : "Outdated" }} ({{ issueDate.toLocaleDateString() }}) {{ dissolved ?
-                    "DISSOLVED" : ""
-                }}
+              <td class="align-middle">
+                Circability
               </td>
 
-              <td rowspan="2">
+              <td class="align-middle">
+                <b>
+                  {{ circuable ? "Circuable" : "Outdated" }}
+                </b>
+              </td>
+
+              <td rowspan="100%" class="bg-default text-white">
                 <u>
                   Private
                 </u>
+
                 <br />
                 <br />
 
-                Evaluation
+                Count
                 <b>
-                  $5
+                  {{ count }}
                 </b>
+
+                <br />
+                <br />
+
+                Notes
+                <b>
+                  {{ notes }}
+                </b>
+
+                <br />
                 <br />
 
                 Evaluation
@@ -48,23 +66,69 @@
             </tr>
 
             <tr>
-              <td>
+              <td class="align-middle">
                 Currency
               </td>
 
-              <th>
+              <th class="align-middle">
                 <b>
                   {{ currency }}
                 </b>
               </th>
 
-              <td>
+              <td class="align-middle">
+                Issue Year
+              </td>
+
+              <th class="align-middle">
+                <b>
+                  {{ issueyear }}
+                </b>
+              </th>
+            </tr>
+
+            <tr>
+              <td class="align-middle">
+                Unit
+              </td>
+
+              <th class="align-middle">
+                <b>
+                  {{ unit }}
+                </b>
+              </th>
+
+              <td class="align-middle">
+                Dissolved
+              </td>
+
+              <th class="align-middle">
+                <b>
+                  {{ dissolved ?
+                      "Yes" : "No"
+                  }}
+                </b>
+              </th>
+            </tr>
+
+            <tr>
+              <td class="align-middle">
                 Value
               </td>
 
-              <th>
+              <th class="align-middle">
                 <b>
-                  {{ currency }}
+                  {{ value }}
+                </b>
+              </th>
+
+              <td class="align-middle">
+                Collection Date
+              </td>
+
+              <th class="align-middle">
+                <b>
+                  {{ collection.toLocaleDateString() }}
                 </b>
               </th>
             </tr>
@@ -93,11 +157,11 @@
 export default {
   name: 'ListCard',
   props: {
-    front: {
+    imgF: {
       type: String,
       default: 'https://wadirumclassictours.webnode.com/_files/200020389-979919987d/jordanian-money-1-dinar01.jpg',
     },
-    back: {
+    imgB: {
       type: String,
       default: 'https://wadirumclassictours.webnode.com/_files/200020390-5432d552e0/jordanian-money-1-dinar02.jpg',
     },
@@ -107,19 +171,43 @@ export default {
     },
     currency: {
       type: String,
-      default: 'Dinar',
+      default: 'JOD',
     },
-    circuable: {
+    type: {
+      type: String,
+      default: 'Banknote',
+    },
+    unit: {
+      type: String,
+      default: "Dinar",
+    },
+    value: {
+      type: Number,
+      default: 0,
+    },
+    issueyear: {
+      type: Number,
+      default: 2000,
+    },
+    circability: {
       type: Boolean,
       default: true,
-    },
-    issueDate: {
-      type: Date,
-      default: new Date(),
     },
     dissolved: {
       type: Boolean,
       default: false,
+    },
+    count: {
+      type: Number,
+      default: 1,
+    },
+    collection: {
+      type: Date,
+      default: new Date(),
+    },
+    notes: {
+      type: String,
+      default: "-",
     },
   }
 };

@@ -22,76 +22,19 @@
             <b-row>
               <b-col md="6">
                 <label class="form-control-label">Currency Front Image</label>
-                <DropzoneFileUpload @change="file => filesChange(file, 'front')" />
+                <DropzoneFileUpload name="imgF" @change="file => filesChange(file, 'imgF')" />
               </b-col>
 
               <b-col md="6">
                 <label class="form-control-label">Currency Back Image</label>
-                <DropzoneFileUpload @change="file => filesChange(file, 'back')" />
-              </b-col>
-            </b-row>
-
-            <b-row>
-              <b-col sm="6" md="4">
-                <base-input type="number" :min="0" :step="0.001" label="Value" placeholder="Value"
-                  v-model="inputs.value" />
-              </b-col>
-
-              <b-col sm="6" md="4">
-                <base-input type="number" :min="1800" :max="new Date().getFullYear()" label="Issue Year"
-                  :placeholder="new Date().getFullYear()" v-model="inputs.issueyear" />
-              </b-col>
-
-              <b-col sm="6" md="4">
-                <base-input label="Collection Date">
-                  <base-input type="month" v-model="inputs.collection" />
-                </base-input>
-              </b-col>
-            </b-row>
-
-            <b-row>
-              <b-col sm="6" md="4">
-                <base-input label="Currency Type">
-                  <el-select filterable placeholder="Please select" v-model="inputs.type">
-                    <el-option label="Banknote" value="banknote" />
-                    <el-option label="Coin" value="coin" />
-                  </el-select>
-                </base-input>
-              </b-col>
-
-              <b-col sm="6" md="4">
-                <label class="form-control-label">Circability</label>
-
-                <b-row>
-                  <b-form-radio :value="true" name="circuable" class="m-2" v-model="inputs.circuable">
-                    Circuable
-                  </b-form-radio>
-
-                  <b-form-radio :value="false" name="circuable" class="m-2" v-model="inputs.circuable">
-                    Outdated
-                  </b-form-radio>
-                </b-row>
-              </b-col>
-
-              <b-col sm="6" md="4">
-                <label class="form-control-label">Existance</label>
-
-                <b-row>
-                  <b-form-radio :value="true" name="exist" class="m-2" v-model="inputs.exist">
-                    Exist
-                  </b-form-radio>
-
-                  <b-form-radio :value="false" name="exist" class="m-2" v-model="inputs.exist">
-                    Dissolved
-                  </b-form-radio>
-                </b-row>
+                <DropzoneFileUpload name="imgB" @change="file => filesChange(file, 'imgB')" />
               </b-col>
             </b-row>
 
             <b-row>
               <b-col sm="6" md="4">
                 <base-input label="Continent">
-                  <el-select filterable placeholder="Please select" v-model="inputs.continent">
+                  <el-select name="continent" filterable placeholder="Please select" v-model="inputs.continent">
                     <el-option label="Africa" value="Africa" />
                     <el-option label="Americas" value="Americas" />
                     <el-option label="Asia" value="Asia" />
@@ -103,7 +46,7 @@
 
               <b-col sm="6" md="4">
                 <base-input label="Country">
-                  <el-select filterable placeholder="Please select" v-model="inputs.country">
+                  <el-select name="country" filterable placeholder="Please select" v-model="inputs.country">
                     <el-option label="South Africa" value="South Africa" />
                     <el-option label="Canada" value="Canada" />
                     <el-option label="Malaysia" value="Malaysia" />
@@ -115,7 +58,7 @@
 
               <b-col sm="6" md="4">
                 <base-input label="Currency">
-                  <el-select filterable placeholder="Please select" v-model="inputs.currency">
+                  <el-select name="currency" filterable placeholder="Please select" v-model="inputs.currency">
                     <el-option label="New Rand" value="NRand" />
                     <el-option label="Old Rand" value="ORand" />
                     <el-option label="New Dollar CAD" value="NDollar" />
@@ -128,6 +71,76 @@
                     <el-option label="Old Dollar" value="ODollar" />
                   </el-select>
                 </base-input>
+              </b-col>
+            </b-row>
+
+            <b-row>
+              <b-col sm="6" md="4">
+                <base-input label="Currency Type">
+                  <el-select name="type" filterable placeholder="Please select" v-model="inputs.type">
+                    <el-option label="Banknote" value="Banknote" />
+                    <el-option label="Coin" value="Coin" />
+                  </el-select>
+                </base-input>
+              </b-col>
+
+              <b-col sm="6" md="4">
+                <base-input name="unit" type="text" label="Unit" placeholder="Unit" v-model="inputs.unit" />
+              </b-col>
+
+              <b-col sm="6" md="4">
+                <base-input name="value" type="number" :min="0" :step="0.001" label="Value" placeholder="Value"
+                  v-model="inputs.value" />
+              </b-col>
+
+              <b-col sm="6" md="4">
+                <base-input name="issueyear" type="number" :min="1000" :max="new Date().getFullYear()"
+                  label="Issue Year" :placeholder="new Date().getFullYear()" v-model="inputs.issueyear" />
+              </b-col>
+
+              <b-col sm="6" md="4">
+                <base-input name="collection" label="Collection Date">
+                  <base-input type="month" v-model="inputs.collection" />
+                </base-input>
+              </b-col>
+
+              <b-col sm="6" md="4">
+                <base-input name="count" type="number" :min="1" label="Count" placeholder="Count"
+                  v-model="inputs.count" />
+              </b-col>
+
+              <b-col sm="6" md="4">
+                <base-input name="notes" type="text" label="Notes" placeholder="Notes" v-model="inputs.notes">
+                  <textarea class="form-control" rows="2" />
+                </base-input>
+              </b-col>
+
+              <b-col sm="6" md="4">
+                <label class="form-control-label">Circability</label>
+
+                <b-row>
+                  <b-form-radio :value="true" name="circability" class="m-2" v-model="inputs.circability">
+                    Circuable
+                  </b-form-radio>
+
+                  <b-form-radio :value="false" name="circability" class="m-2" v-model="inputs.circability">
+                    Outdated
+                  </b-form-radio>
+                </b-row>
+              </b-col>
+
+              <b-col sm="6" md="4">
+                <label class="form-control-label">Existance</label>
+
+                <b-row>
+                  <b-form-radio :value="true" name="dissolved" class="m-2" v-model="inputs.dissolved">
+                    Exist
+                  </b-form-radio>
+
+                  <b-form-radio :value="false" name="dissolved" class="m-2" v-model="inputs.dissolved">
+                    Dissolved
+                  </b-form-radio>
+                </b-row>
               </b-col>
             </b-row>
           </b-card-body>
@@ -159,18 +172,20 @@ export default {
     return {
       inputs: {
         files: {
-          front: "",
-          back: ""
+          imgF: "",
+          imgB: ""
         },
-        value: 0,
-        issueyear: 0,
-        collection: `${new Date().getFullYear()}-${new Date().getMonth() + 1 < 10 ? '0' : ''}${new Date().getMonth() + 1}`,
+        nation: "",
+        currency: "",
         type: "",
-        circuable: true,
-        exist: true,
-        continent: "",
-        country: "",
-        currency: ""
+        unit: "",
+        value: 0,
+        issueyear: 2000,
+        circability: true,
+        dissolved: false,
+        count: 1,
+        collection: "",
+        notes: "-",
       },
     }
   },
