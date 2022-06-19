@@ -7,9 +7,6 @@
         <b-col xs="12">
           <SummaryStats />
         </b-col>
-        <b-col xl="12">
-          <social-traffic-table></social-traffic-table>
-        </b-col>
       </b-row>
 
       <b-row>
@@ -150,9 +147,6 @@
 
       <!--Tables-->
       <b-row>
-        <b-col xs="12">
-          <PageVisitsTable />
-        </b-col>
         <b-col xl="12">
           <social-traffic-table></social-traffic-table>
         </b-col>
@@ -179,9 +173,7 @@ import ProgressTrackList from './ProgressTrackList';
 
 // Tables
 import LightTable from './LightTable';
-import SocialTrafficTable from './SocialTrafficTable';
 import SummaryStats from './SummaryStats';
-import PageVisitsTable from './PageVisitsTable';
 import Header from './Header';
 
 export default {
@@ -193,8 +185,6 @@ export default {
     Header,
     TaskList,
     SummaryStats,
-    SocialTrafficTable,
-    PageVisitsTable,
     LightTable,
     UserList,
     ProgressTrackList
