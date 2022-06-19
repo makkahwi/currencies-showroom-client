@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <base-header class="pb-6">
+    <base-header type="info" class="pb-6">
       <b-row align-v="center" class="py-4">
         <b-col cols="7" lg="6">
           <h6 class="h2 text-white d-inline-block mb-0">Enlisted Currencies</h6>

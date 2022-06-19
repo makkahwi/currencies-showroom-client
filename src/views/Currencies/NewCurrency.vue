@@ -1,6 +1,6 @@
 <template>
   <div>
-    <base-header class="pb-6">
+    <base-header type="info" class="pb-6">
       <b-row class="align-items-center py-4">
         <b-col lg="6" cols="7">
           <h6 class="h2 text-white d-inline-block mb-0">{{ $route.name }}</h6>
