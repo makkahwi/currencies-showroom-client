@@ -18,17 +18,26 @@ It's a web app to publish one's collection of currencies from all over the world
 
 ## To-Do Features
 
-- Automated currencies evaluation.
-- Dashboard charts
-- Monthly progress (Timeline)
+- Dashboard charts & statistics.
+- Dashboard map data representation.
+- Hardcoded meta data to dynamic (Admin Profile).
+- Notifications Bar.
+- API Connections.
+- Admin Table Filters.
+- Admin Table CRUD Modals.
 
 ## Feature Works
 
 - Build a centralized & community-contribution-based database for currency updates.
-- Hardcoded meta data to dynamic (Admin Profile).
 - Transform into a centralized web services for all collectors.
   - Registration & subscriptions mgmt sys.
   - Auto subdomain creation & deployment.
+- Automated currencies evaluation (API to 3rd party).
+- Monthly progress (Timeline).
+- Generate PDF booklet.
+- Social media share of showroom / latest additions.
+- Centralize & Restructure Components & Subviews.
+- Expand to all sort of collectors (like stamps).
 
 ## How to start development
 
