@@ -1,5 +1,5 @@
 <template>
-  <footer class="py-5 bg-secondary" id="footer-main">
+  <footer class="pt-5 pb-3 bg-secondary">
     <b-container>
       <b-row align-v="center" class="justify-content-xl-between">
         <b-col xl="6">
@@ -11,25 +11,25 @@
           </div>
         </b-col>
 
-        <!-- <b-col xl="6" class="col-xl-6">
-            <b-nav class="nav-footer justify-content-center justify-content-xl-end">
-              <b-nav-item href="https://www.creative-tim.com" target="_blank">
-                Creative Tim
-              </b-nav-item>
+        <b-col xl="6" class="col-xl-6">
+          <b-nav class="nav-footer justify-content-center justify-content-xl-end">
+            <b-nav-item to="/">
+              Home
+            </b-nav-item>
 
-              <b-nav-item href="https://www.creative-tim.com/presentation" target="_blank">
-                About Us
-              </b-nav-item>
+            <b-nav-item href="https://currencies.showroom" target="_blank">
+              About
+            </b-nav-item>
 
-              <b-nav-item href="http://blog.creative-tim.com" target="_blank">
-                Blog
-              </b-nav-item>
+            <b-nav-item to="/showroom">
+              Showroom
+            </b-nav-item>
 
-              <b-nav-item href="https://www.creative-tim.com/license" target="_blank">
-                License
-              </b-nav-item>
-            </b-nav>
-          </b-col> -->
+            <b-nav-item to="/dashboard">
+              Dashboard
+            </b-nav-item>
+          </b-nav>
+        </b-col>
       </b-row>
     </b-container>
   </footer>
@@ -37,11 +37,10 @@
 
 <script>
 export default {
-  props: {
-    backgroundColor: {
-      type: String,
-      default: 'black'
-    }
+  data() {
+    return {
+      year: new Date().getFullYear(),
+    };
   },
 };
 </script>

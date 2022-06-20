@@ -14,21 +14,17 @@ export default {
       type: Object,
       default: () => ({})
     },
-    points: {
-      type: Array,
-      default: () => []
-    }
   },
   data() {
     return {
       id: this.randomString(),
-      color1: '#f6f9fc',
-      color2: '#adb5bd',
-      highlightFillColor: '#ced4da',
+      color1: '#11cdef',
+      color2: '#172b4d',
       borderColor: 'white',
-      highlightBorderColor: 'white',
+      highlightFillColor: '#11cdef',
+      highlightBorderColor: '#11cdef',
       bubbleHighlightFillColor: '#11cdef',
-      bubbleFillColor: '#fb6340'
+      bubbleFillColor: '#f5365c'
     };
   },
   methods: {
@@ -89,14 +85,14 @@ export default {
         highlightFillColor: this.bubbleHighlightFillColor,
         highlightBorderColor: this.bubbleHighlightFillColor
       }
-      let bubblePoints = this.points.map(point => {
+      let bubblePoints = Object.keys(this.mapData).map(key => ({ name: `${key} ${this.mapData[key]} piece(s)`, centered: key })).map(point => {
         return {
           ...bubbleOptions,
           ...point
         }
       })
       worldMap.bubbles(bubblePoints, {
-        popupTemplate: function(geo, data) {
+        popupTemplate: function (geo, data) {
           return '<div class="hoverinfo">' + data.name
         }
       });
@@ -124,4 +120,5 @@ export default {
   }
 };
 </script>
-<style></style>
+<style>
+</style>

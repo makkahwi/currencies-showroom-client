@@ -13,16 +13,16 @@
               </span>
 
               <b-row v-if="view === 'gallery'">
-                <GalleryCard v-for="(currency, i) in currencies" :key="`currency${i}`" :front="currency.front"
-                  :back="currency.back" :nation="currency.nation" :currency="currency.currency"
-                  :circuable="currency.circuable" :issueDate="currency.issueDate" :dissolved="currency.dissolved" />
+                <GalleryCard v-for="(currency, i) in currencies" :key="`currency${i}`" :imgF="currency.imgF"
+                  :back="currency.imgB" :nation="currency.nation" :currency="currency.currency" :value="currency.value"
+                  :circuable="currency.circuable" :issueyear="currency.issueyear" :dissolved="currency.dissolved" />
               </b-row>
 
               <b-row v-else-if="view === 'list'">
                 <b-col xs="12" v-for="(currency, i) in currencies" :key="`currency${i}`">
-                  <ListCard :front="currency.front" :back="currency.back" :nation="currency.nation"
-                    :currency="currency.currency" :circuable="currency.circuable" :issueDate="currency.issueDate"
-                    :dissolved="currency.dissolved" />
+                  <ListCard :imgF="currency.imgF" :back="currency.imgB" :nation="currency.nation"
+                    :value="currency.value" :currency="currency.currency" :circuable="currency.circuable"
+                    :issueyear="currency.issueyear" :dissolved="currency.dissolved" />
                 </b-col>
               </b-row>
 
@@ -54,9 +54,9 @@ export default {
   data() {
     return {
       currencies: [{
-        // front: "", back: "",
-        nation: "currency.nation", currency: "currency.currency", circuable: true,
-        issueDate: new Date(), dissolved: false
+        // imgF: "", imgB: "",
+        nation: "Jordan", currency: "JOD", circuable: true, value: 1,
+        issueyear: 2005, dissolved: false
       }],
       view: "gallery"
     }
