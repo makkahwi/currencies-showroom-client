@@ -37,14 +37,15 @@ export default {
   },
   data() {
     return {
-      // allData: {
-      //   monthly: listingData.filter(record => new Date(record.collection).getFullYear() === new Date().getFullYear()).reduce((final, record) => final[new Date(record.collection).getMonth()] += record.count, []),
-      //   yearly: listingData.reduce((final, record) => final[new Date(record.collection).getFullYear()] += record.count, []),
-      // },
       activeIndex: "monthly",
       chartData: {
-        datasets: [],
-        labels: [],
+        datasets: [
+          {
+            label: 'Pieces Collected',
+            data: this.monthlyData(listingData.filter(record => new Date(record.collection).getFullYear() === new Date().getFullYear()).map(item => ({ count: item.count, month: new Date(item.collection).getMonth() })))
+          }
+        ],
+        labels: new Array(new Date().getMonth() + 1).fill().map((_, i) => this.months(i)),
       },
       extraOptions: chartConfigs.blueChartOptions,
     };
