@@ -31,8 +31,8 @@
 
           <div>
             <b-col cols="12" class="d-flex justify-content-center justify-content-sm-between flex-wrap">
-              <el-select class="select-primary pagination-select" v-model="pagination.perPage" placeholder="Per page">
-                <el-option class="select-primary" v-for="item in pagination.perPageOptions" :key="item" :label="item"
+              <el-select class="select-default pagination-select" v-model="pagination.perPage" placeholder="Per page">
+                <el-option class="select-default" v-for="item in pagination.perPageOptions" :key="item" :label="item"
                   :value="item">
                 </el-option>
               </el-select>

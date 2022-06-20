@@ -1,5 +1,4 @@
 <template>
-  <!-- Left div because b-navbar does not trigger on mouseenter / mouseleave events -->
   <div class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light bg-white"
     @mouseenter="$sidebar.onMouseEnter()" @mouseleave="$sidebar.onMouseLeave()" :data="backgroundColor">
     <div class="scrollbar-inner" ref="sidebarScrollArea">
@@ -7,8 +6,8 @@
         <b-navbar-brand href="#">
           <img :src="logo" class="navbar-brand-img" alt="Sidebar logo">
         </b-navbar-brand>
+
         <div class="ml-auto">
-          <!-- Sidenav toggler -->
           <div class="sidenav-toggler d-none d-xl-block" :class="{ 'active': !$sidebar.isMinimized }"
             @click="minimizeSidebar">
             <div class="sidenav-toggler-inner">
@@ -19,7 +18,9 @@
           </div>
         </div>
       </div>
+
       <slot></slot>
+
       <div class="navbar-inner">
         <b-navbar-nav>
           <slot name="links">
@@ -29,11 +30,13 @@
             </sidebar-item>
           </slot>
         </b-navbar-nav>
+
         <slot name="links-after"></slot>
       </div>
     </div>
   </div>
 </template>
+
 <script>
 export default {
   name: 'sidebar',
