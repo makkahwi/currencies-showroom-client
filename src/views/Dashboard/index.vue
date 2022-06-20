@@ -11,31 +11,7 @@
 
       <b-row>
         <b-col xl="8">
-          <card type="default" header-classes="bg-transparent">
-            <b-row align-v="center" slot="header">
-              <b-col>
-                <h6 class="text-light text-uppercase ls-1 mb-1">Overview</h6>
-                <h5 class="h3 text-white mb-0">Sales value</h5>
-              </b-col>
-              <b-col>
-                <b-nav class="nav-pills justify-content-end">
-                  <b-nav-item class="mr-2 mr-md-0" :active="bigLineChart.activeIndex === 0" link-classes="py-2 px-3"
-                    @click.prevent="initBigChart(0)">
-                    <span class="d-none d-md-block">Month</span>
-                    <span class="d-md-none">M</span>
-                  </b-nav-item>
-                  <b-nav-item link-classes="py-2 px-3" :active="bigLineChart.activeIndex === 1"
-                    @click.prevent="initBigChart(1)">
-                    <span class="d-none d-md-block">Week</span>
-                    <span class="d-md-none">W</span>
-                  </b-nav-item>
-                </b-nav>
-              </b-col>
-            </b-row>
-            <line-chart :height="350" ref="bigChart" :chart-data="bigLineChart.chartData"
-              :extra-options="bigLineChart.extraOptions">
-            </line-chart>
-          </card>
+          <AdditionsChart />
         </b-col>
 
         <b-col xl="4">
@@ -143,15 +119,6 @@
           </b-card-group>
         </b-col>
       </b-row>
-      <!--End Widgets-->
-
-      <!--Tables-->
-      <b-row>
-        <b-col xl="12">
-          <social-traffic-table></social-traffic-table>
-        </b-col>
-      </b-row>
-      <!--End tables-->
     </b-container>
 
   </div>
@@ -159,7 +126,6 @@
 <script>
 // Charts
 import * as chartConfigs from '@/components/Charts/config';
-import LineChart from '@/components/Charts/LineChart';
 import BarChart from '@/components/Charts/BarChart';
 
 // Components
@@ -174,12 +140,13 @@ import ProgressTrackList from './ProgressTrackList';
 // Tables
 import LightTable from './LightTable';
 import SummaryStats from './SummaryStats';
+import AdditionsChart from './AdditionsChart';
 import Header from './Header';
 
 export default {
   components: {
     ActivityFeed,
-    LineChart,
+    AdditionsChart,
     BarChart,
     BaseProgress,
     Header,
