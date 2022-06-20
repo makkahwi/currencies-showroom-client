@@ -30,14 +30,9 @@
       </b-row>
       <!-- End charts-->
 
-      <!--Lists-->
       <b-row>
         <b-col xl="4">
-          <card>
-            <h5 class="h3 mb-0" slot="header">Team members</h5>
-
-            <user-list></user-list>
-          </card>
+          <EdgeNumbers />
         </b-col>
 
         <b-col xl="4">
@@ -134,7 +129,7 @@ import BaseProgress from '@/components/BaseProgress';
 // Lists
 import ActivityFeed from './ActivityFeed';
 import TaskList from './TaskList';
-import UserList from './UserList';
+import EdgeNumbers from './EdgeNumbers';
 import ProgressTrackList from './ProgressTrackList';
 
 // Tables
@@ -153,7 +148,7 @@ export default {
     TaskList,
     SummaryStats,
     LightTable,
-    UserList,
+    EdgeNumbers,
     ProgressTrackList
   },
   data() {
