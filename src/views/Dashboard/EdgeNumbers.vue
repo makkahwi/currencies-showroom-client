@@ -2,27 +2,29 @@
   <card>
     <h5 class="h3 mb-0" slot="header">Edge Numbers</h5>
 
-    <b-list-group flush class="my--3">
-      <b-list-group-item class="px-0" v-for="(casee, i) in cases" :key="i">
-        <b-row align-v="center">
-          <b-col cols="auto">
-            <span class="avatar rounded-circle bg-default">
-              <i :class="`ni ni-${casee.icon}`"></i>
-            </span>
-          </b-col>
+    <b-list-group>
+      <b-row align-v="center">
+        <b-col xs="6" md="4" v-for="(casee, i) in cases" :key="i">
+          <b-row align-v="center">
+            <b-col cols="auto">
+              <span class="avatar rounded-circle bg-default">
+                <i :class="`ni ni-${casee.icon}`"></i>
+              </span>
+            </b-col>
 
-          <b-col class="ml--2">
-            <h4 class="mb-0">
-              <a href="#!">{{ casee.title }}</a>
-            </h4>
+            <b-col class="ml--2">
+              <h4 class="mb-0">
+                <a href="#!">{{ casee.title }}</a>
+              </h4>
 
-            <small v-for="(key, i) in Object.keys(casee.details)" :key="i">
-              {{ label(key) }}: <b>{{ casee.details[key] }}</b>
-              <br />
-            </small>
-          </b-col>
-        </b-row>
-      </b-list-group-item>
+              <small v-for="(key, i) in Object.keys(casee.details)" :key="i">
+                {{ label(key) }}: <b>{{ casee.details[key] }}</b>
+                <br />
+              </small>
+            </b-col>
+          </b-row>
+        </b-col>
+      </b-row>
     </b-list-group>
   </card>
 </template>
@@ -36,17 +38,17 @@ export default {
     return {
       cases: [
         {
-          icon: "like-2",
+          icon: "diamond",
           title: 'Most Recent Collected',
           details: [listingData.sort((a, b) => new Date(b.collection) - new Date(a.collection))[0]].map(record => ({ currency: `${record.currency} ${record.value} of ${record.nation}`, type: record.type, collection: record.collection }))[0],
         },
         {
-          icon: "like-2",
+          icon: "watch-time",
           title: 'Oldest Currency Acquired',
           details: [listingData.sort((a, b) => new Date(a.issueyear) - new Date(b.issueyear))[0]].map(record => ({ currency: `${record.currency} ${record.value} of ${record.nation}`, type: record.type, issueyear: record.issueyear }))[0],
         },
         {
-          icon: "like-2",
+          icon: "money-coins",
           title: 'Highest Currency Value',
           details: [listingData.sort((a, b) => new Date(b.value) - new Date(a.value))[0]].map(record => ({ currency: `${record.currency} ${record.value} of ${record.nation}`, type: record.type, value: record.value }))[0],
         }

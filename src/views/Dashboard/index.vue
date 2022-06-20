@@ -10,10 +10,16 @@
       </b-row>
 
       <b-row>
-        <b-col xl="8">
+        <b-col xl="7">
           <AdditionsChart />
         </b-col>
 
+        <b-col xl="12">
+          <EdgeNumbers />
+        </b-col>
+      </b-row>
+
+      <b-row>
         <b-col xl="4">
           <card header-classes="bg-transparent">
             <b-row align-v="center" slot="header">
@@ -26,13 +32,6 @@
             <bar-chart :height="350" ref="barChart" :chart-data="redBarChart.chartData">
             </bar-chart>
           </card>
-        </b-col>
-      </b-row>
-      <!-- End charts-->
-
-      <b-row>
-        <b-col xl="4">
-          <EdgeNumbers />
         </b-col>
 
         <b-col xl="4">
@@ -51,15 +50,15 @@
           </card>
         </b-col>
       </b-row>
-      <!--End lists-->
 
-      <!--Widgets-->
       <b-row>
         <b-col xl="5">
           <activity-feed></activity-feed>
         </b-col>
+
         <b-col xl="7">
           <light-table></light-table>
+
           <b-card-group deck>
             <card gradient="default" no-body="">
               <b-card-body>
@@ -85,7 +84,6 @@
                   </b-col>
                 </b-row>
               </b-card-body>
-
             </card>
 
             <card gradient="danger">
@@ -93,46 +91,41 @@
                 <b-col>
                   <img src="img/icons/cards/bitcoin.png" alt="Image placeholder">
                 </b-col>
+
                 <b-col md="auto">
                   <b-badge size="lg" variant="success">Active</b-badge>
                 </b-col>
               </b-row>
+
               <div class="my-4">
                 <span class="h6 surtitle text-light">
                   Username
                 </span>
                 <div class="h1 text-white">@johnsnow</div>
               </div>
+
               <b-row>
                 <b-col>
                   <span class="h6 surtitle text-light">Name</span>
                   <span class="d-block h3 text-white">John Snow</span>
                 </b-col>
               </b-row>
-
             </card>
           </b-card-group>
         </b-col>
       </b-row>
     </b-container>
-
   </div>
 </template>
+
 <script>
-// Charts
 import * as chartConfigs from '@/components/Charts/config';
 import BarChart from '@/components/Charts/BarChart';
-
-// Components
 import BaseProgress from '@/components/BaseProgress';
-
-// Lists
 import ActivityFeed from './ActivityFeed';
 import TaskList from './TaskList';
 import EdgeNumbers from './EdgeNumbers';
 import ProgressTrackList from './ProgressTrackList';
-
-// Tables
 import LightTable from './LightTable';
 import SummaryStats from './SummaryStats';
 import AdditionsChart from './AdditionsChart';
@@ -202,5 +195,6 @@ export default {
   }
 };
 </script>
+
 <style>
 </style>
