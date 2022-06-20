@@ -4,12 +4,14 @@
 
     <b-container fluid class="mt--6">
       <b-row>
+        <b-col xl="12">
+          <NationsMap />
+        </b-col>
+
         <b-col xs="12">
           <SummaryStats />
         </b-col>
-      </b-row>
 
-      <b-row>
         <b-col xl="7">
           <AdditionsChart />
         </b-col>
@@ -125,6 +127,7 @@ import BaseProgress from '@/components/BaseProgress';
 import ActivityFeed from './ActivityFeed';
 import TaskList from './TaskList';
 import EdgeNumbers from './EdgeNumbers';
+import NationsMap from './NationsMap';
 import ProgressTrackList from './ProgressTrackList';
 import LightTable from './LightTable';
 import SummaryStats from './SummaryStats';
@@ -135,6 +138,7 @@ export default {
   components: {
     ActivityFeed,
     AdditionsChart,
+    NationsMap,
     BarChart,
     BaseProgress,
     Header,
