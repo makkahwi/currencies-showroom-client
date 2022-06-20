@@ -4,7 +4,7 @@
 
     <b-list-group>
       <b-row align-v="center">
-        <b-col xs="6" md="4" v-for="(casee, i) in cases" :key="i">
+        <b-col xs="6" md="4" v-for="(casee, i) in cases" :key="i" class="py-3">
           <b-row align-v="center">
             <b-col cols="auto">
               <span class="avatar rounded-circle bg-default">
