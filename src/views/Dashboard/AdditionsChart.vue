@@ -42,7 +42,7 @@ export default {
         datasets: [
           {
             label: 'Pieces Collected',
-            data: this.monthlyData(listingData.filter(record => new Date(record.collection).getFullYear() === new Date().getFullYear()).map(item => ({ count: item.count, month: new Date(item.collection).getMonth() })))
+            data: this.monthlyData(listingData.filter(({ collection }) => new Date(collection).getFullYear() === new Date().getFullYear()).map(({ count, collection }) => ({ count, month: new Date(collection).getMonth() })))
           }
         ],
         labels: new Array(new Date().getMonth() + 1).fill().map((_, i) => this.months(i)),
@@ -56,7 +56,7 @@ export default {
         datasets: [
           {
             label: 'Pieces Collected',
-            data: this.monthlyData(listingData.filter(record => new Date(record.collection).getFullYear() === new Date().getFullYear()).map(item => ({ count: item.count, month: new Date(item.collection).getMonth() })))
+            data: this.monthlyData(listingData.filter(({ collection }) => new Date(collection).getFullYear() === new Date().getFullYear()).map(({ count, collection }) => ({ count, month: new Date(collection).getMonth() })))
           }
         ],
         labels: new Array(new Date().getMonth() + 1).fill().map((_, i) => this.months(i)),
@@ -64,7 +64,7 @@ export default {
       this.activeIndex = "monthly";
     },
     monthlyData(data) {
-      return new Array(12).fill(0).map((_, month) => data.filter(record => record.month === month).reduce((final, record) => final += record.count, 0))
+      return new Array(12).fill(0).map((_, month) => data.filter(record => record.month === month).reduce((final, { count }) => final += count, 0))
     },
     months(month) {
       switch (month) {
@@ -88,15 +88,15 @@ export default {
         datasets: [
           {
             label: 'Pieces Collected',
-            data: this.yearlyData(listingData.map(item => ({ count: item.count, year: new Date(item.collection).getFullYear() })))
+            data: this.yearlyData(listingData.map(({ count, collection }) => ({ count, year: new Date(collection).getFullYear() })))
           }
         ],
-        labels: [...new Set(listingData.map(item => ({ count: item.count, year: new Date(item.collection).getFullYear() })).map(record => record.year))].sort(),
+        labels: [...new Set(listingData.map(({ count, collection }) => ({ count, year: new Date(collection).getFullYear() })).map(({ year }) => year))].sort(),
       };
       this.activeIndex = "yearly";
     },
     yearlyData(data) {
-      return [...new Set(data.map(record => record.year))].sort().map(year => data.filter(record => record.year === year).reduce((final, record) => final += record.count, 0))
+      return [...new Set(data.map(({ year }) => year))].sort().map(year => data.filter(record => record.year === year).reduce((final, { count }) => final += count, 0))
     },
   },
   mounted() {

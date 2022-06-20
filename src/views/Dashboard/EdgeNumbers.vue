@@ -40,17 +40,17 @@ export default {
         {
           icon: "diamond",
           title: 'Most Recent Collected',
-          details: [listingData.sort((a, b) => new Date(b.collection) - new Date(a.collection))[0]].map(record => ({ currency: `${record.currency} ${record.value} of ${record.nation}`, type: record.type, collection: record.collection }))[0],
+          details: [listingData.sort((a, b) => new Date(b.collection) - new Date(a.collection))[0]].map(({ currency, value, nation, type, collection }) => ({ currency: `${currency} ${value} of ${nation}`, type, collection }))[0],
         },
         {
           icon: "watch-time",
           title: 'Oldest Currency Acquired',
-          details: [listingData.sort((a, b) => new Date(a.issueyear) - new Date(b.issueyear))[0]].map(record => ({ currency: `${record.currency} ${record.value} of ${record.nation}`, type: record.type, issueyear: record.issueyear }))[0],
+          details: [listingData.sort((a, b) => new Date(a.issueyear) - new Date(b.issueyear))[0]].map(({ currency, value, nation, type, issueyear }) => ({ currency: `${currency} ${value} of ${nation}`, type, issueyear }))[0],
         },
         {
           icon: "money-coins",
           title: 'Highest Currency Value',
-          details: [listingData.sort((a, b) => new Date(b.value) - new Date(a.value))[0]].map(record => ({ currency: `${record.currency} ${record.value} of ${record.nation}`, type: record.type, value: record.value }))[0],
+          details: [listingData.sort((a, b) => new Date(b.value) - new Date(a.value))[0]].map(({ currency, value, nation, type }) => ({ currency: `${currency} ${value} of ${nation}`, type, value }))[0],
         }
       ]
     };
