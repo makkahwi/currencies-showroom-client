@@ -4,10 +4,11 @@
       <b-row align-v="center" class="justify-content-xl-between">
         <b-col xl="6">
           <div class="copyright text-center text-xl-left text-muted">
-            All rights Reserved © {{ year }}
+            Crafted with Care by
             <a href="https://Suhaib.dev" class="font-weight-bold ml-1 text-info" target="_blank">
               Suhaib Ahmad
             </a>
+            {{ year }}
           </div>
         </b-col>
 
