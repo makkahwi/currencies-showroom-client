@@ -8,7 +8,7 @@
 
     <MultiImages />
 
-    <Links />
+    <Links id="haveYourShowroom" />
   </div>
 </template>
 
