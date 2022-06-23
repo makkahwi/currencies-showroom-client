@@ -19,7 +19,7 @@
 
     <b-card-body class="pt-0">
       <b-row>
-        <b-col >
+        <b-col>
           <div class="card-profile-stats d-flex justify-content-center">
             <div>
               <span class="heading">22</span>
@@ -44,7 +44,7 @@
           <i class="ni location_pin mr-2"></i>Bucharest, Romania
         </div>
         <div class="h5 mt-4">
-          <i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer
+          <i class="ni business_briefcase-24 mr-2"></i>Solution Manager
         </div>
         <div>
           <i class="ni education_hat mr-2"></i>University of Computer Science
@@ -56,4 +56,5 @@
 <script>
 export default {};
 </script>
-<style></style>
+<style>
+</style>

@@ -91,7 +91,7 @@
             <card gradient="danger">
               <b-row align-v="center" class="justify-content-between">
                 <b-col>
-                  <img src="img/icons/cards/bitcoin.png" alt="Image placeholder">
+                  <!-- <img src="img/icons/cards/bitcoin.png" alt="Image placeholder"> -->
                 </b-col>
 
                 <b-col md="auto">
