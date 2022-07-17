@@ -1,15 +1,15 @@
 <template>
   <ul class="list-unstyled mt-5">
-    <li class="py-2" v-for="(item, i) in list" :key="i">
+    <li class="py-2" v-for="({ icon, text }, i) in list" :key="i">
       <div class="d-flex align-items-center">
         <div>
           <b-badge pill :variant="color" class="badge-circle mr-3">
-            <i :class="`ni ni-${item.icon}`"></i>
+            <i :class="`ni ni-${icon}`"></i>
           </b-badge>
         </div>
 
         <div>
-          <h4 class="mb-0">{{ item.text }}</h4>
+          <h4 class="mb-0">{{ text }}</h4>
         </div>
       </div>
     </li>
