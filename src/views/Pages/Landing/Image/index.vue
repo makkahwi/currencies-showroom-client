@@ -21,7 +21,7 @@
       </b-row>
 
       <div class="blur--hover">
-        <a>
+        <a href="https://github.com/makkahwi/currencies-showroom">
           <div class="icons-container blur-item mt-5">
             <img src="img/brand/white.png">
           </div>
