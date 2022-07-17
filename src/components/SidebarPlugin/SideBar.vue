@@ -43,7 +43,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: 'Creative Tim',
+      default: 'Currencies Showroom',
       description: 'Sidebar title'
     },
     shortTitle: {

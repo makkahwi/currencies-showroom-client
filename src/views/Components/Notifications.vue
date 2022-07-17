@@ -3,9 +3,9 @@
     <base-header class="pb-6">
       <b-row align-v="center" class="py-4">
         <b-col lg="6" cols="7">
-          <h6 class="h2 text-white d-inline-block mb-0">{{$route.name}}</h6>
+          <h6 class="h2 text-white d-inline-block mb-0">{{ $route.name }}</h6>
           <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-            <route-breadcrumb/>
+            <route-breadcrumb />
           </nav>
         </b-col>
         <b-col lg="6" cols="5" class="text-right">
@@ -83,9 +83,7 @@
             </modal>
 
             <!--Notice modal-->
-            <modal :show.sync="modals.notice"
-                   modal-classes="modal-danger"
-                   modal-content-classes="bg-gradient-danger">
+            <modal :show.sync="modals.notice" modal-classes="modal-danger" modal-content-classes="bg-gradient-danger">
               <h6 slot="header" class="modal-title">Your attention is required</h6>
 
               <div class="py-3 text-center">
@@ -103,24 +101,20 @@
             </modal>
 
             <!--Form modal-->
-            <modal :show.sync="modals.form"
-                   size="sm"
-                   body-classes="p-0">
-              <card type="secondary"
-                    header-classes="bg-transparent pb-5"
-                    body-classes="px-lg-5 py-lg-5"
-                    class="border-0 mb-0">
+            <modal :show.sync="modals.form" size="sm" body-classes="p-0">
+              <card type="secondary" header-classes="bg-transparent pb-5" body-classes="px-lg-5 py-lg-5"
+                class="border-0 mb-0">
                 <template slot="header">
                   <div class="text-muted text-center mt-2 mb-3">
                     <small>Sign in with</small>
                   </div>
                   <div class="btn-wrapper text-center">
                     <base-button type="neutral" icon>
-                      <span class="btn-inner--icon"><img src="img/icons/common/github.svg"></span>
+                      <!-- <span class="btn-inner--icon"><img src="img/icons/common/github.svg"></span> -->
                       <span class="btn-inner--text">Github</span>
                     </base-button>
                     <base-button type="neutral" icon>
-                      <span class="btn-inner--icon"><img src="img/icons/common/google.svg"></span>
+                      <!-- <span class="btn-inner--icon"><img src="img/icons/common/google.svg"></span> -->
                       <span class="btn-inner--text">Google</span>
                     </base-button>
                   </div>
@@ -131,17 +125,11 @@
                     <small>Or sign in with credentials</small>
                   </div>
                   <b-form role="form">
-                    <base-input alternative
-                                v-model="formModal.email"
-                                class="mb-3"
-                                placeholder="Email"
-                                prepend-icon="ni ni-email-83">
+                    <base-input alternative v-model="formModal.email" class="mb-3" placeholder="Email"
+                      prepend-icon="ni ni-email-83">
                     </base-input>
-                    <base-input alternative
-                                v-model="formModal.password"
-                                type="password"
-                                placeholder="Password"
-                                prepend-icon="ni ni-lock-circle-open">
+                    <base-input alternative v-model="formModal.password" type="password" placeholder="Password"
+                      prepend-icon="ni ni-lock-circle-open">
                     </base-input>
                     <b-form-checkbox v-model="formModal.remember">
                       Remember me
@@ -185,94 +173,94 @@
   </div>
 </template>
 <script>
-  import swal from 'sweetalert2';
-  import 'sweetalert2/dist/sweetalert2.css';
-  import { Modal, BaseAlert } from '@/components';
-  import RouteBreadcrumb from '@/components/Breadcrumb/RouteBreadcrumb';
-  import BaseHeader from '@/components/BaseHeader';
-  export default {
-    components: {
-      Modal,
-      BaseAlert,
-      BaseHeader,
-      RouteBreadcrumb
-    },
-    data() {
-      return {
-        notifications: {
-          topCenter: false
-        },
-        modals: {
-          classic: false,
-          notice: false,
-          form: false
-        },
-        formModal: {
-          email: '',
-          password: '',
-          remember: true
-        }
-      };
-    },
-    methods: {
-      notifyVue(type = 'default') {
-        console.log(type)
-        this.$notify({
-          message:
-            'Welcome to <b>Vue Argon Dashboard Pro</b> - a beautiful resource for every web developer',
-          timeout: 5000,
-          icon: 'ni ni-bell-55',
-          type
-        });
+import swal from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.css';
+import { Modal, BaseAlert } from '@/components';
+import RouteBreadcrumb from '@/components/Breadcrumb/RouteBreadcrumb';
+import BaseHeader from '@/components/BaseHeader';
+export default {
+  components: {
+    Modal,
+    BaseAlert,
+    BaseHeader,
+    RouteBreadcrumb
+  },
+  data() {
+    return {
+      notifications: {
+        topCenter: false
       },
-      showSwal(type) {
-        if (type === 'basic') {
-          swal.fire({
-            title: `Here's a message!`,
-            text: `A few words about this sweet alert ...`,
-            buttonsStyling: false,
-            confirmButtonClass: 'btn btn-primary'
-          });
-        } else if (type === 'info') {
-          swal.fire({
-            icon: 'info',
-            title: `Info`,
-            text: `A few words about this sweet alert ...`,
-            buttonsStyling: false,
-            confirmButtonClass: 'btn btn-info'
-          });
-        } else if (type === 'success') {
-          swal.fire({
-            title: `Success`,
-            text: 'A few words about this sweet alert ...',
-            buttonsStyling: false,
-            confirmButtonClass: 'btn btn-success',
-            icon: 'success'
-          });
-        } else if (type === 'warning') {
-          swal.fire({
-            title: `Warning`,
-            text: 'A few words about this sweet alert ...',
-            buttonsStyling: false,
-            confirmButtonClass: 'btn btn-warning',
-            icon: 'warning'
-          })
-        } else if (type === 'question') {
-          swal.fire({
-            title: `Are you sure?`,
-            text: 'A few words about this sweet alert ...',
-            buttonsStyling: false,
-            confirmButtonClass: 'btn btn-default',
-            icon: 'question'
-          })
-        }
+      modals: {
+        classic: false,
+        notice: false,
+        form: false
+      },
+      formModal: {
+        email: '',
+        password: '',
+        remember: true
+      }
+    };
+  },
+  methods: {
+    notifyVue(type = 'default') {
+      console.log(type)
+      this.$notify({
+        message:
+          'Welcome to <b>Vue Argon Dashboard Pro</b> - a beautiful resource for every web developer',
+        timeout: 5000,
+        icon: 'ni ni-bell-55',
+        type
+      });
+    },
+    showSwal(type) {
+      if (type === 'basic') {
+        swal.fire({
+          title: `Here's a message!`,
+          text: `A few words about this sweet alert ...`,
+          buttonsStyling: false,
+          confirmButtonClass: 'btn btn-primary'
+        });
+      } else if (type === 'info') {
+        swal.fire({
+          icon: 'info',
+          title: `Info`,
+          text: `A few words about this sweet alert ...`,
+          buttonsStyling: false,
+          confirmButtonClass: 'btn btn-info'
+        });
+      } else if (type === 'success') {
+        swal.fire({
+          title: `Success`,
+          text: 'A few words about this sweet alert ...',
+          buttonsStyling: false,
+          confirmButtonClass: 'btn btn-success',
+          icon: 'success'
+        });
+      } else if (type === 'warning') {
+        swal.fire({
+          title: `Warning`,
+          text: 'A few words about this sweet alert ...',
+          buttonsStyling: false,
+          confirmButtonClass: 'btn btn-warning',
+          icon: 'warning'
+        })
+      } else if (type === 'question') {
+        swal.fire({
+          title: `Are you sure?`,
+          text: 'A few words about this sweet alert ...',
+          buttonsStyling: false,
+          confirmButtonClass: 'btn btn-default',
+          icon: 'question'
+        })
       }
     }
-  };
+  }
+};
 </script>
 <style>
-  .ct-example .btn {
-    margin-top: .5rem;
-    margin-bottom: .5rem;
-  }
+.ct-example .btn {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
 </style>

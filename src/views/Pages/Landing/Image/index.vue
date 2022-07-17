@@ -21,7 +21,7 @@
       </b-row>
 
       <div class="blur--hover">
-        <a href="https://www.creative-tim.com/learning-lab/bootstrap-vue/icons/argon-dashboard">
+        <a>
           <div class="icons-container blur-item mt-5">
             <img src="img/brand/white.png">
           </div>
