@@ -1,9 +1,8 @@
 import axios from 'axios';
-
-const baseURL = "https://currencies-showroom-suhaib.herokuapp.com/"
+import { BACKEND_URL } from '../../env';
 
 const service = axios.create({
-  baseURL
+  baseURL: BACKEND_URL || "http://localhost:8000/"
 });
 
 service.defaults.headers.get.Accept = 'application/json';
