@@ -7,7 +7,7 @@ const NewCurrency = () => import(/* webpackChunkName: "dashboard" */ '@/views/Cu
 const Currencies = () => import(/* webpackChunkName: "dashboard" */ '@/views/Currencies/');
 const Charts = () => import(/* webpackChunkName: "dashboard" */ '@/views/Charts.vue');
 const Notifications = () => import(/* webpackChunkName: "components" */ '@/views/Components/Notifications.vue');
-const User = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/UserProfile.vue');
+const User = () => import(/* webpackChunkName: "pages" */ '@/views/Profile');
 const Showroom = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Showroom');
 const Login = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Login.vue');
 const Home = () => import(/* webpackChunkName: "pages" */ '@/views/Pages/Landing');

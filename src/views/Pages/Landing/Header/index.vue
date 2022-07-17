@@ -19,11 +19,11 @@
               </p>
 
               <div class="mt-5">
-                <a href="#" class="btn btn-info my-2">
+                <router-link to="/showroom" class="btn btn-info my-2">
                   Browse My Collection
-                </a>
+                </router-link>
 
-                <a href="#" class="btn btn-neutral my-2">
+                <a href="#haveYourShowroom" class="btn btn-neutral my-2">
                   Build Your Showroom
                 </a>
               </div>
