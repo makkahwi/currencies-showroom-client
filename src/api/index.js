@@ -1,8 +1,9 @@
 import axios from 'axios';
-import { BACKEND_URL } from '../../env';
+// import { BACKEND_URL } from '../../env';
 
 const service = axios.create({
-  baseURL: BACKEND_URL || "http://localhost:8000/"
+  // baseURL: BACKEND_URL || "http://localhost:8000/"
+  baseURL: "http://localhost:8000/"
 });
 
 service.defaults.headers.get.Accept = 'application/json';
